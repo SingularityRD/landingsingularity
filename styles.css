@@ -6014,10 +6014,12 @@ a {
    GLOBAL DEPLOY-READY RESPONSIVENESS OMNIBUS
    ========================================================================== */
 
-/* 1. Prevent all horizontal scrolling structurally */
+/* 1. Prevent all horizontal scrolling structurally without breaking position: sticky */
 html, body {
-    overflow-x: hidden;
     width: 100%;
+    /* overflow-x: hidden aggressively breaks position: sticky on webkit/blink. 
+       Using clip or just managing element widths prevents sideways scroll. */
+    overflow-x: clip;
 }
 
 /* 2. Responsive overrides for 768px (Tablets / Mobile) */
