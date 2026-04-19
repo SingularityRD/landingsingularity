@@ -462,8 +462,17 @@ a {
     transform: translateY(-2px);
 }
 
-.logo-item svg {
+.logo-item svg,
+.logo-item img {
     display: block;
+}
+
+.logo-wordmark span {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', sans-serif;
 }
 
 /* --- SCROLL REVEAL SECTION --- */
