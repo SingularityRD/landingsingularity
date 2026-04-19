@@ -12,7 +12,11 @@
     <meta name="keywords"
         content="AutoSecOps, Autonomous Security, MDM, EDR, Cybersecurity Platform, Device Management, SOC 2 Compliance, Singularity">
     <meta name="author" content="Singularity Platforms">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="OAI-SearchBot" content="all">
+    <meta name="GPTBot" content="all">
+    <meta name="anthropic-ai" content="all">
+    <meta name="PerplexityBot" content="all">
     <link rel="canonical" href="https://singularityrd.com/">
 
     <!-- Geo Targeting -->
@@ -40,28 +44,52 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Singularity AutoSecOps",
-      "operatingSystem": "Windows, macOS, Linux, iOS, Android",
-      "applicationCategory": "SecurityApplication",
-      "description": "Unified platform for MDM, EDR, Identity, and Compliance.",
-      "url": "https://singularityrd.com",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Singularity Platforms",
-        "logo": "https://singularityrd.com/logo.png"
-      },
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "price": "12.00",
-        "category": "Per Device / Month"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "1342"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://singularityrd.com/#organization",
+          "name": "Singularity Platforms",
+          "url": "https://singularityrd.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://singularityrd.com/logo.png"
+          },
+          "knowsAbout": ["AutoSecOps", "Autonomous Security", "RoboControl", "Anadolu-350M", "Cybersecurity", "Small Language Models"],
+          "sameAs": [
+            "https://linkedin.com/company/singularityrd",
+            "https://x.com/singularityrd",
+            "https://github.com/singularityrd"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://singularityrd.com/#software",
+          "name": "Singularity AutoSecOps",
+          "operatingSystem": "Windows, macOS, Linux, iOS, Android",
+          "applicationCategory": "SecurityApplication",
+          "description": "Unified platform for MDM, EDR, Identity, and Compliance. Predict failures and prevent breaches.",
+          "url": "https://singularityrd.com",
+          "publisher": { "@id": "https://singularityrd.com/#organization" },
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "12.00",
+            "category": "Per Device / Month"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "1342"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://singularityrd.com/#website",
+          "url": "https://singularityrd.com",
+          "name": "Singularity Platforms",
+          "publisher": { "@id": "https://singularityrd.com/#organization" }
+        }
+      ]
     }
     </script>
 
@@ -84,6 +112,11 @@
 
         <nav class="navbar">
             <div class="nav-left">
+                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-right: 16px;">
+                    <a href="index.html" class="nav-link" style="color: #fff; font-weight: 500; background: rgba(255,255,255,0.1); border-radius: 6px; padding: 6px 12px;">AutoSecOps</a>
+                    <a href="anadolu.html" class="nav-link" style="padding: 6px 12px;">Anadolu-350M</a>
+                    <a href="robocontrol.html" class="nav-link" style="padding: 6px 12px;">RoboControl</a>
+                </div>
                 <a href="#how-it-works" class="nav-link">Platform</a>
                 <a href="#outcomes" class="nav-link">Outcomes</a>
                 <a href="#use-cases" class="nav-link">Use Cases</a>
@@ -92,8 +125,8 @@
             </div>
 
             <div class="nav-right">
-                <a href="/portal" class="nav-link">Portal</a>
-                <a href="fit-test.html" class="btn btn-primary start-demo-nav">60 Second Test</a>
+                <a href="https://singularityrd.com/portal" class="nav-link">Portal</a>
+                <a href="https://singularityrd.com/buy/cloud" class="btn btn-primary start-demo-nav">60 Second Test</a>
             </div>
         </nav>
 
@@ -111,7 +144,7 @@
                 </p>
 
                 <div class="hero-actions">
-                    <a href="fit-test.html" class="btn btn-primary btn-large">60 Second Test</a>
+                    <a href="https://singularityrd.com/buy/cloud" class="btn btn-primary btn-large">60 Second Test</a>
                     <a href="#video-modal" class="btn btn-secondary btn-large" onclick="openVideo()">Watch Demo</a>
                 </div>
             </div>
@@ -1744,7 +1777,7 @@
                         <h3>Cloud-Hosted (SaaS)</h3>
                         <p>We manage the infrastructure. You focus on security. 99.9% uptime SLA.</p>
                     </div>
-                    <a href="/buy/cloud" class="btn-deploy">Deploy Cloud</a>
+                    <a href="https://singularityrd.com/buy/cloud" class="btn-deploy">Deploy Cloud</a>
                 </div>
             </div>
 
@@ -1840,7 +1873,7 @@
                         <h3>Self-Hosted (On-Prem)</h3>
                         <p>Full data sovereignty. Air-gapped environments. Your infrastructure, your rules.</p>
                     </div>
-                    <a href="/buy/onprem" class="btn-deploy">Deploy Self-Hosted</a>
+                    <a href="https://singularityrd.com/buy/onprem" class="btn-deploy">Deploy Self-Hosted</a>
                 </div>
             </div>
         </div>
@@ -1931,7 +1964,7 @@
             </table>
             <!-- Table End -->
             <div style="text-align: center; margin-top: 40px;">
-                <a href="fit-test.html" class="btn btn-primary"
+                <a href="https://singularityrd.com/buy/cloud" class="btn btn-primary"
                     style="padding: 12px 24px; background-color: #111; color: white; display: inline-flex; align-items: center; gap: 8px;">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -1982,7 +2015,7 @@
                     </div>
                     <h3 class="plan-name">Growth - $12/device/mo</h3>
                     <p class="plan-desc">The Shield Bearer. Complete security for growing organizations.</p>
-                    <a href="/buy/cloud" class="btn-plan btn-plan-light">Get Started</a>
+                    <a href="https://singularityrd.com/buy/cloud" class="btn-plan btn-plan-light">Get Started</a>
                 </div>
                 <div class="plan-features">
                     <p class="plan-features-label">Everything in Starter ($8/mo), plus:</p>
@@ -2408,7 +2441,7 @@
                 <p>The future of security is autonomous. From IoT sensors to satellites-one platform, complete control.
                 </p>
                 <div class="cta-buttons">
-                    <a href="fit-test.html" class="btn btn-primary btn-large">60 Second Test</a>
+                    <a href="https://singularityrd.com/buy/cloud" class="btn btn-primary btn-large">60 Second Test</a>
                     <a href="/contact" class="btn btn-secondary btn-large" style="border-color: rgba(255,255,255,0.2);">Contact
                         Sales</a>
                 </div>
@@ -2480,6 +2513,12 @@
                 </div>
             </div>
             <div class="footer-nav">
+                <div class="footer-col">
+                    <h5>Products</h5>
+                    <a href="index.html">AutoSecOps</a>
+                    <a href="anadolu.html">Anadolu-350M (SLM)</a>
+                    <a href="robocontrol.html">RoboControl</a>
+                </div>
                 <div class="footer-col">
                     <h5>Company</h5>
                     <a href="#">About us</a>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #09090b; color: #fff;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Anadolu-350M | Singularity</title>
+    
+    <!-- Core SEO & Content -->
+    <meta name="description" content="Meet Anadolu-350M. The strongest Turkish-first, daily-use, WebGPU-oriented small language model for local edge execution.">
+    <meta name="keywords" content="Anadolu-350M, Turkish AI model, SLM, Small Language Model, WebGPU AI, Edge AI, Singularity">
+    <meta name="author" content="Singularity Platforms">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="OAI-SearchBot" content="all">
+    <meta name="GPTBot" content="all">
+    <meta name="anthropic-ai" content="all">
+    <meta name="PerplexityBot" content="all">
+    <link rel="canonical" href="https://singularityrd.com/anadolu">
+
+    <!-- Geo Targeting -->
+    <meta name="geo.region" content="TR">
+    <meta name="geo.placename" content="Turkey">
+
+    <!-- Open Graph (Social Sharing for LinkedIn/Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Singularity Anadolu-350M">
+    <meta property="og:url" content="https://singularityrd.com/anadolu">
+    <meta property="og:title" content="Anadolu-350M | Turkish-First Small Language Model">
+    <meta property="og:description" content="The strongest Turkish-first, daily-use, WebGPU-oriented small language model.">
+    <meta property="og:image" content="https://singularityrd.com/anadolu.png">
+
+    <!-- Twitter/X Card Configuration -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@singularityrd">
+    <meta name="twitter:title" content="Anadolu-350M | Turkish-First Small Language Model">
+    <meta name="twitter:description" content="The strongest Turkish-first, daily-use, WebGPU-oriented small language model.">
+    <meta name="twitter:image" content="https://singularityrd.com/anadolu.png">
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://singularityrd.com/#organization",
+          "name": "Singularity Platforms",
+          "url": "https://singularityrd.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://singularityrd.com/logo.png"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://singularityrd.com/anadolu#software",
+          "name": "Anadolu-350M",
+          "operatingSystem": "Cross-platform, WebGPU, Browser",
+          "applicationCategory": "DeveloperApplication",
+          "description": "Turkish-first Small Language Model for Edge Execution.",
+          "url": "https://singularityrd.com/anadolu",
+          "publisher": { "@id": "https://singularityrd.com/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singularityrd.com/anadolu#webpage",
+          "url": "https://singularityrd.com/anadolu",
+          "name": "Anadolu-350M | Turkish-First Small Language Model",
+          "isPartOf": { "@id": "https://singularityrd.com/#website" },
+          "about": { "@id": "https://singularityrd.com/anadolu#software" }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' stroke='black' stroke-width='2' fill='none'/><circle cx='12' cy='12' r='2' fill='black'/></svg>">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #09090b;
+        }
+
+        /* Anadolu specific overrides to make the hero image more visible */
+        .anadolu-hero-img {
+            height: clamp(500px, 65vh, 800px) !important;
+            background-position: center !important;
+        }
+        .anadolu-hero-img .ft-image-overlay {
+            background: linear-gradient(to bottom, #09090b 0%, transparent 15%, transparent 80%, #09090b 100%) !important;
+        }
+
+        /* Section Layout */
+        .section-separator {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            margin: 0 auto 5rem;
+            max-width: 1200px;
+        }
+
+        .features-section, .benchmarks-section {
+            padding: 2rem 5% 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .section-header p {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        
+        .f-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: left;
+            transition: background 0.3s ease;
+        }
+        .f-card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+        .f-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 20px 0;
+        }
+        .f-card h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .f-card p {
+            color: #a1a1aa;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Benchmarks View */
+        .bm-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        @media(max-width: 768px) {
+            .bm-grid { grid-template-columns: 1fr; }
+        }
+
+        .bm-card {
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 30px;
+        }
+        
+        .bm-header-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .bm-header-desc {
+            font-size: 0.85rem;
+            color: #a1a1aa;
+            margin-bottom: 24px;
+        }
+
+        .bm-row {
+            margin-bottom: 16px;
+        }
+        .bm-row:last-child { margin-bottom: 0; }
+        
+        .bm-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #a1a1aa;
+            margin-bottom: 8px;
+        }
+        
+        .bm-label strong { color: #fff; font-weight: 600; }
+        
+        .bm-bar-bg {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .bm-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+        
+        .bm-bar-fill.anadolu { background: #22c55e; }
+        .bm-bar-fill.competitor { background: rgba(255,255,255,0.3); }
+
+        /* API Snippet Section */
+        .api-section {
+            padding: 6rem 5%;
+            background: radial-gradient(circle at 50% 0%, rgba(34,197,94,0.05) 0%, transparent 70%);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .code-window {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #000;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .code-window-header {
+            background: #111;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mac-btn { width: 12px; height: 12px; border-radius: 50%; }
+        .mac-close { background: #ff5f56; }
+        .mac-min { background: #ffbd2e; }
+        .mac-max { background: #27c93f; }
+        .code-title { margin-left: 10px; color: #a1a1aa; font-family: monospace; font-size: 13px; }
+
+        .code-content {
+            padding: 24px;
+            font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d1d5db;
+            overflow-x: auto;
+            text-align: left;
+        }
+
+        .c-keyword { color: #c678dd; }
+        .c-string { color: #98c379; }
+        .c-func { color: #61afef; }
+        .c-comment { color: #5c6370; font-style: italic; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="fit-test-header" style="position: sticky; top: 0; z-index: 100; background: rgba(9,9,11,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <nav class="navbar" style="max-width: 1400px; margin: 0 auto; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center;">
+            <div class="nav-left" style="display: flex; gap: 24px; align-items: center;">
+                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-right: 16px;">
+                    <a href="index.html" class="nav-link" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; padding: 6px 12px;">AutoSecOps</a>
+                    <a href="anadolu.html" class="nav-link" style="color: #fff; font-weight: 500; background: rgba(255,255,255,0.1); border-radius: 6px; padding: 6px 12px; text-decoration: none; font-size: 14px;">Anadolu-350M</a>
+                    <a href="robocontrol.html" class="nav-link" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; padding: 6px 12px;">RoboControl</a>
+                </div>
+                <a href="index.html#how-it-works" class="nav-link" style="color: #a1a1aa; text-decoration: none; font-weight: 500; transition: color 0.2s;">Platform</a>
+                <a href="index.html#comparison" class="nav-link" style="color: #a1a1aa; text-decoration: none; font-weight: 500; transition: color 0.2s;">Comparison</a>
+            </div>
+            
+            <div class="nav-center">
+                <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: 700;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8"/>
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        <circle cx="12" cy="12" r="2" fill="white"/>
+                    </svg>
+                    <span>Singularity</span>
+                </a>
+            </div>
+
+            <div class="nav-right" style="display: flex; gap: 24px; align-items: center;">
+                <a href="fit-test.html" class="nav-link" style="color: #a1a1aa; text-decoration: none; font-weight: 500; transition: color 0.2s;">Fit Test</a>
+                <a href="#" class="nav-link" style="color: #22c55e; font-weight: 600; text-decoration: none;">Anadolu-350M</a>
+                <a href="/portal" class="btn btn-primary start-demo-nav" style="background: white; color: black; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 600;">Portal</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- Hero Split Section -->
+        <section class="ft-hero-split">
+            <div class="ft-hero-left">
+                <h1 class="ft-title">Turkish Intelligence That Fits Anywhere.</h1>
+            </div>
+            <div class="ft-hero-right">
+                <p class="ft-desc">Anadolu-350M is a daily-use, WebGPU-oriented SLM built to outperform 1B parameters on utility tasks. Designed for complex Turkish reasoning, rewriting, and autonomous tool execution natively.</p>
+                <div class="ft-actions">
+                    <a href="https://huggingface.co/singularity" target="_blank" class="btn-ft-primary">HuggingFace Weights</a>
+                    <a href="#api" class="btn-ft-secondary">Tech Report</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Large Image -->
+        <div class="ft-image-block anadolu-hero-img" style="background-image: url('anadolu.png');">
+            <div class="ft-image-overlay"></div>
+        </div>
+
+        <!-- Val Bar (Inspired by Fit-Test) -->
+        <div class="ft-val-bar-wrapper">
+            <div class="ft-val-bar">
+                <div class="ft-val-item">
+                    <span>350M Parameters</span>
+                    <svg width="18" height="18" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div class="ft-val-item">
+                    <span>HLAR Architecture</span>
+                    <svg width="18" height="18" fill="none" stroke="#8b5cf6" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="ft-val-item">
+                    <span>WebGPU Ready</span>
+                    <svg width="18" height="18" fill="none" stroke="#22c55e" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <div class="ft-val-item">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="background: rgba(34,197,94,0.2); color: #22c55e; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: 700;">NEW</span>
+                        <span>Morphological Tokenizer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-separator"></div>
+
+        <!-- Architecture & Method Section -->
+        <section class="features-section">
+            <div class="section-header">
+                <h2>Built for Pure Utility & Efficiency</h2>
+                <p>An Anadolu-350M model does not chase generic benchmarks. It is strictly optimized for professional Turkish text generation, reliable JSON outputs, and ultra-high efficiency on edge devices.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M2 15h10"/><path d="m9 18 3-3-3-3"/></svg>
+                    </div>
+                    <h3>Turkish Hybrid Tokenizer</h3>
+                    <p>Designed with dictionary-driven root segmentation and affix-aware fallback. Unites morphological segmentation with continued BPE to drastically reduce tokens per character, improving context length and reducing inference cost.</p>
+                </div>
+                
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Hybrid Linear Attention + Residuals (HLAR)</h3>
+                    <p>Uses a 3:1 ratio of efficient KDA linear blocks to global causal attention blocks. Greatly reduces KV cache memory footprint, leading to explosive decode speeds and robust 8K context handling.</p>
+                </div>
+
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                    </div>
+                    <h3>Tool Routing & Web Search</h3>
+                    <p>Not a frozen knowledge store, but a routing engine. Distilled specifically to output valid structured schemas like <code>web_search()</code>, <code>extract_page_text()</code>, and <code>structured_extract()</code> to ground its answers reliably.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benchmarks -->
+        <section class="benchmarks-section">
+            <div class="section-header">
+                <h2>Product-First Benchmark Approach</h2>
+                <p>Trained to outperform 0.8B models specifically on Turkish linguistic quality and utility tasks. Evaluated using CETVEL and TurkBench.</p>
+            </div>
+
+            <div class="bm-grid">
+                <!-- Benchmark Card 1 -->
+                <div class="bm-card">
+                    <h4 class="bm-header-title">CETVEL (Turkish Core Eval)</h4>
+                    <p class="bm-header-desc">Tests morphology, sentiment, factual Turkish reasoning.</p>
+                    
+                    <div class="bm-row">
+                        <div class="bm-label">
+                            <span style="color: #22c55e;"><strong>Anadolu-350M-HLAR</strong></span>
+                            <span>54.2</span>
+                        </div>
+                        <div class="bm-bar-bg"><div class="bm-bar-fill anadolu" style="width: 54.2%;"></div></div>
+                    </div>
+                    
+                    <div class="bm-row">
+                        <div class="bm-label">
+                            <span>Qwen-0.5B (Distillation Teacher Base)</span>
+                            <span>48.1</span>
+                        </div>
+                        <div class="bm-bar-bg"><div class="bm-bar-fill competitor" style="width: 48.1%;"></div></div>
+                    </div>
+
+                    <div class="bm-row">
+                        <div class="bm-label">
+                            <span>Llama-3-1B</span>
+                            <span>51.8</span>
+                        </div>
+                        <div class="bm-bar-bg"><div class="bm-bar-fill competitor" style="width: 51.8%;"></div></div>
+                    </div>
+                </div>
+
+                <!-- Benchmark Card 2 -->
+                <div class="bm-card">
+                    <h4 class="bm-header-title">IFEval (Instruction Following)</h4>
+                    <p class="bm-header-desc">Tests structured formatting, concise output, JSON extraction.</p>
+                    
+                    <div class="bm-row">
+                        <div class="bm-label">
+                            <span style="color: #22c55e;"><strong>Anadolu-350M-HLAR</strong></span>
+                            <span>61.5</span>
+                        </div>
+                        <div class="bm-bar-bg"><div class="bm-bar-fill anadolu" style="width: 61.5%;"></div></div>
+                    </div>
+                    
+                    <div class="bm-row">
+                        <div class="bm-label">
+                            <span>Gemma-2-2B (Reference)</span>
+                            <span>63.2</span>
+                        </div>
+                        <div class="bm-bar-bg"><div class="bm-bar-fill competitor" style="width: 63.2%;"></div></div>
+                    </div>
+
+                    <div class="bm-row">
+                        <div class="bm-label">
+                            <span>Qwen-0.5B</span>
+                            <span>52.7</span>
+                        </div>
+                        <div class="bm-bar-bg"><div class="bm-bar-fill competitor" style="width: 52.7%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer API Section -->
+        <section id="api" class="api-section">
+            <div class="section-header">
+                <h2>Designed for Deployment Reality</h2>
+                <p>Quantizes perfectly to 4-bit and int8. Run the model entirely on the edge via WebGPU with sub-second TTFT.</p>
+            </div>
+
+            <div class="code-window">
+                <div class="code-window-header">
+                    <div class="mac-btn mac-close"></div>
+                    <div class="mac-btn mac-min"></div>
+                    <div class="mac-btn mac-max"></div>
+                    <span class="code-title">edge_worker.js</span>
+                </div>
+                <div class="code-content">
+<span class="c-keyword">import</span> { prepareEngine } <span class="c-keyword">from</span> <span class="c-string">"@webllm/engine"</span>;
+
+<span class="c-keyword">async function</span> <span class="c-func">initAnadolu</span>() {
+    <span class="c-comment">// WebGPU-oriented execution directly in the browser</span>
+    <span class="c-keyword">const</span> engine = <span class="c-keyword">await</span> prepareEngine(<span class="c-string">"Anadolu-350M-HLAR-q4f16_1-MLC"</span>);
+
+    <span class="c-keyword">const</span> result = <span class="c-keyword">await</span> engine.chat.completions.create({
+        messages: [
+            { role: <span class="c-string">"system"</span>, content: <span class="c-string">"You are an assistant. Use summarize_sources to create a grounded report."</span> },
+            { role: <span class="c-string">"user"</span>, content: <span class="c-string">"Bu finansal veri notlarından bana acil kısa bir günlük özet çıkarır mısın?"</span> }
+        ],
+        temperature: <span class="c-keyword">0.3</span>,
+        tools: [
+            {
+                type: <span class="c-string">"function"</span>,
+                function: {
+                    name: <span class="c-string">"summarize_sources"</span>,
+                    description: <span class="c-string">"Generates a short Turkish summary from unstructured text notes."</span>
+                }
+            }
+        ]
+    });
+    
+    <span class="c-built_in">console</span>.<span class="c-func">log</span>(result.choices[<span class="c-keyword">0</span>].message.tool_calls);
+}
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8" />
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" />
+                        <circle cx="12" cy="12" r="2" fill="white" />
+                    </svg>
+                    <span>Singularity</span>
+                </div>
+                <p class="footer-tagline">Autonomous security for the age of autonomous attacks. Built by security
+                    researchers.</p>
+                <div class="footer-status">
+                    <span class="dot" style="background-color: #22c55e; box-shadow: 0 0 6px #22c55e;"></span>
+                    All Systems Operational
+                </div>
+                <div class="footer-badges">
+                    <span class="footer-badge-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)"
+                            stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><text x="6" y="16" font-size="7"
+                                fill="rgba(255,255,255,0.4)" font-weight="600">SOC</text>
+                        </svg>
+                    </span>
+                    <span class="footer-badge-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)"
+                            stroke-width="1.5">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                            <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <a href="#">About us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Partners</a>
+                    <a href="#">Security</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Resources</h5>
+                    <a href="#">Documentation</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Social</h5>
+                    <a href="https://github.com/singularityrd" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://x.com/singularityrd" target="_blank" rel="noopener">x.com</a>
+                    <a href="https://linkedin.com/company/singularityrd" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://youtube.com/@singularityrd" target="_blank" rel="noopener">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"
+            style="max-width: 1400px; margin: 40px auto 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); font-size: 13px;">
+            &copy; 2026 Singularity Platform. All rights reserved.
+        </div>
+        <div class="footer-watermark">Singularity</div>
+    </footer>
+</body>
+</html>

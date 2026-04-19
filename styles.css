@@ -66,6 +66,17 @@ a {
 /* Ensure foreground content stays above overlay */
 .navbar, .hero-container, .floating-widget {
     position: relative;
+}
+
+.navbar {
+    z-index: 40;
+}
+
+.hero-container {
+    z-index: 5;
+}
+
+.floating-widget {
     z-index: 10;
 }
 
@@ -88,6 +99,11 @@ a {
 .nav-link {
     opacity: 0.8;
     transition: opacity 0.2s ease;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .nav-link:hover {
@@ -106,6 +122,9 @@ a {
 
 .nav-right .start-demo-nav {
     padding: 10px 20px;
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 
@@ -6454,15 +6473,19 @@ html, body {
         justify-content: space-between;
         gap: 10px;
         flex-wrap: wrap;
+        align-items: center;
     }
 
     .nav-right .nav-link {
         display: inline-flex;
+        min-height: 44px;
+        padding: 0 8px;
     }
 
     .nav-right .start-demo-nav {
         flex: 1 1 auto;
         padding: 10px 16px;
+        min-height: 44px;
     }
 
     .hero-container {
@@ -6844,6 +6867,7 @@ html, body {
         flex: 1 1 100%;
         padding: 9px 14px;
         font-size: 13px;
+        min-height: 44px;
     }
 
     .hero-container {

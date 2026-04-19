@@ -9,7 +9,11 @@
     <meta name="description" content="Take the 60-second fit test to see if your organization is ready for Autonomous Security Operations. Predict failures, prevent breaches.">
     <meta name="keywords" content="AutoSecOps Readiness, Security Assessment, Cybersecurity Platform, Device Management, Singularity Fit Test">
     <meta name="author" content="Singularity Platforms">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="OAI-SearchBot" content="all">
+    <meta name="GPTBot" content="all">
+    <meta name="anthropic-ai" content="all">
+    <meta name="PerplexityBot" content="all">
     <link rel="canonical" href="https://singularityrd.com/fit-test">
 
     <!-- Geo Targeting -->
@@ -31,6 +35,41 @@
     <meta name="twitter:description" content="Take the 60-second fit test to see if your organization is ready for Autonomous Security Operations.">
     <meta name="twitter:image" content="https://singularityrd.com/HEiGBCEWEAAyAx3.jpg">
 
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://singularityrd.com/#organization",
+          "name": "Singularity Platforms",
+          "url": "https://singularityrd.com",
+          "logo": {
+             "@type": "ImageObject",
+             "url": "https://singularityrd.com/logo.png"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://singularityrd.com/fit-test#software",
+          "name": "60-Second Fit Test",
+          "applicationCategory": "BusinessApplication",
+          "description": "Take the 60-second fit test to see if your organization is ready for Autonomous Security Operations.",
+          "url": "https://singularityrd.com/fit-test",
+          "publisher": { "@id": "https://singularityrd.com/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singularityrd.com/fit-test#webpage",
+          "url": "https://singularityrd.com/fit-test",
+          "name": "60-Second Fit Test",
+          "isPartOf": { "@id": "https://singularityrd.com/#website" }
+        }
+      ]
+    }
+    </script>
+
     <!-- Fonts & Styling -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +85,11 @@
     <header class="fit-test-header">
         <nav class="navbar">
             <div class="nav-left">
+                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-right: 16px;">
+                    <a href="index.html" class="nav-link" style="color: rgba(255,255,255,0.7); padding: 6px 12px; font-size: 14px; text-decoration: none;">AutoSecOps</a>
+                    <a href="anadolu.html" class="nav-link" style="color: rgba(255,255,255,0.7); padding: 6px 12px; font-size: 14px; text-decoration: none;">Anadolu-350M</a>
+                    <a href="robocontrol.html" class="nav-link" style="color: rgba(255,255,255,0.7); padding: 6px 12px; font-size: 14px; text-decoration: none;">RoboControl</a>
+                </div>
                 <a href="index.html#how-it-works" class="nav-link">Platform</a>
                 <a href="index.html#comparison" class="nav-link">Comparison</a>
             </div>
@@ -773,6 +817,12 @@
                 </div>
             </div>
             <div class="footer-nav">
+                <div class="footer-col">
+                    <h5>Products</h5>
+                    <a href="index.html">AutoSecOps</a>
+                    <a href="anadolu.html">Anadolu-350M (SLM)</a>
+                    <a href="robocontrol.html">RoboControl</a>
+                </div>
                 <div class="footer-col">
                     <h5>Company</h5>
                     <a href="#">About us</a>

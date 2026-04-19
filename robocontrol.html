@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #09090b; color: #fff; overflow-x: hidden;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>RoboControl | Singularity</title>
+    
+    <!-- Core SEO & Content -->
+    <meta name="description" content="Singularity RoboControl — a unified runtime for autonomous robots. Mission execution, multi-agent coordination, real-time telemetry, and safety policy enforcement.">
+    <meta name="keywords" content="RoboControl, Autonomous Robots, Multi-Agent System, Robot OS, Fleet Management, Safety Policy, Singularity">
+    <meta name="author" content="Singularity Platforms">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="OAI-SearchBot" content="all">
+    <meta name="GPTBot" content="all">
+    <meta name="anthropic-ai" content="all">
+    <meta name="PerplexityBot" content="all">
+    <link rel="canonical" href="https://singularityrd.com/robocontrol">
+
+    <!-- Geo Targeting -->
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="Global">
+
+    <!-- Open Graph (Social Sharing for LinkedIn/Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Singularity RoboControl">
+    <meta property="og:url" content="https://singularityrd.com/robocontrol">
+    <meta property="og:title" content="Singularity | RoboControl - Unified Runtime">
+    <meta property="og:description" content="A unified runtime for autonomous robots. Mission execution, multi-agent coordination, and real-time telemetry.">
+    <meta property="og:image" content="https://singularityrd.com/robocontrol.png">
+
+    <!-- Twitter/X Card Configuration -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@singularityrd">
+    <meta name="twitter:title" content="Singularity | RoboControl - Unified Runtime">
+    <meta name="twitter:description" content="A unified runtime for autonomous robots. Mission execution and multi-agent coordination.">
+    <meta name="twitter:image" content="https://singularityrd.com/robocontrol.png">
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://singularityrd.com/#organization",
+          "name": "Singularity Platforms",
+          "url": "https://singularityrd.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://singularityrd.com/logo.png"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://singularityrd.com/robocontrol#software",
+          "name": "Singularity RoboControl",
+          "operatingSystem": "Linux, ROS2",
+          "applicationCategory": "SystemSoftware",
+          "description": "Unified runtime for autonomous robots. AI fleet management and safety.",
+          "url": "https://singularityrd.com/robocontrol",
+          "publisher": { "@id": "https://singularityrd.com/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://singularityrd.com/robocontrol#webpage",
+          "url": "https://singularityrd.com/robocontrol",
+          "name": "RoboControl | Singularity",
+          "isPartOf": { "@id": "https://singularityrd.com/#website" },
+          "about": { "@id": "https://singularityrd.com/robocontrol#software" }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' stroke='black' stroke-width='2' fill='none'/><circle cx='12' cy='12' r='2' fill='black'/></svg>">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #09090b;
+        }
+
+        /* RoboControl hero image */
+        .robocontrol-hero-img {
+            height: clamp(550px, 80vh, 950px) !important;
+            background-position: center !important;
+            background-size: cover !important;
+        }
+        .robocontrol-hero-img .ft-image-overlay {
+            background: linear-gradient(to bottom, #09090b 0%, transparent 15%, transparent 80%, #09090b 100%) !important;
+        }
+
+        /* Section Layout */
+        .section-separator {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            margin: 0 auto 5rem;
+            max-width: 1200px;
+        }
+
+        .features-section, .hardware-section {
+            padding: 2rem 5% 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .section-header p {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        
+        .f-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: left;
+            transition: background 0.3s ease;
+        }
+        .f-card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        .f-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 20px 0;
+        }
+        .f-card h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .f-card p {
+            color: #a1a1aa;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* API Section Styles */
+        .api-section { padding: 4rem 5% 6rem; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .code-window { background: #1e1e1e; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 30px 60px rgba(0,0,0,0.6); overflow: hidden; margin-top: 40px; text-align: left; }
+        .code-window-header { background: #2d2d2d; padding: 12px 20px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(0,0,0,0.3); }
+        .mac-btn { width: 12px; height: 12px; border-radius: 50%; }
+        .mac-close { background: #ff5f56; }
+        .mac-min { background: #ffbd2e; }
+        .mac-max { background: #27c93f; }
+        .code-title { margin-left: 10px; color: #a1a1aa; font-family: monospace; font-size: 13px; }
+
+        /* RoboControl specific cmd styling for mockup panels */
+        .mock-ui {
+            padding: 20px;
+            font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        .cmd-line {
+            color: #d1d5db;
+            margin-bottom: 8px;
+        }
+        .cmd-prompt {
+            color: #22c55e;
+            font-weight: 600;
+        }
+        .cmd-output {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 4px;
+            padding-left: 8px;
+        /* Terminal / Mock UI Animations */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #22c55e }
+        }
+        @keyframes fadeUpIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .anim-typewriter {
+            overflow: hidden;
+            border-right: .15em solid #22c55e;
+            white-space: nowrap;
+            letter-spacing: .05em;
+        }
+
+        /* Bento 1 Shield Anim */
+        @keyframes pulseShield {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+        }
+        @keyframes spinDash {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Bento 2 Fleet Anim */
+        @keyframes floatBot {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes scanLine {
+            0% { top: 0; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        /* Advanced Bento 2 (Radar Shield) Anim */
+        .radar-sweep {
+            position: absolute;
+            width: 160px; height: 160px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent 70%, rgba(59,130,246,0.1) 80%, rgba(99,102,241,0.5) 100%);
+            animation: radarSpin 4s linear infinite;
+        }
+        @keyframes radarSpin {
+            100% { transform: rotate(360deg); }
+        }
+        .radar-grid-bg {
+            position: absolute;
+            width: 160px; height: 160px;
+            border-radius: 50%;
+            border: 1px solid rgba(59,130,246,0.1);
+            background-image: 
+                linear-gradient(rgba(59,130,246,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59,130,246,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: center center;
+            opacity: 0.5;
+        }
+        .radar-ping {
+            position: absolute;
+            width: 8px; height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ef4444;
+            opacity: 0;
+        }
+        .bento-card.active .radar-ping.p-1 { animation: pingPop 4s infinite 0.5s; top: 30%; left: 60%; }
+        .bento-card.active .radar-ping.p-2 { animation: pingPop 4s infinite 2.1s; bottom: 40%; right: 75%; background: #fbbf24; box-shadow: 0 0 10px #fbbf24; }
+        @keyframes pingPop {
+            0%, 5% { opacity: 0; transform: scale(0.5); }
+            10%, 20% { opacity: 1; transform: scale(1.5); }
+            30%, 100% { opacity: 0; transform: scale(1); }
+        }
+
+        /* Advanced Bento 3 (Network Graph) Anim */
+        .net-hub {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 24px; height: 24px; background: #22c55e; border-radius: 50%;
+            box-shadow: 0 0 15px #22c55e, 0 0 0 10px rgba(34,197,94,0.2);
+            z-index: 5;
+        }
+        .net-node {
+            position: absolute; width: 12px; height: 12px; border-radius: 50%;
+            background: #3b82f6; box-shadow: 0 0 10px #3b82f6; z-index: 5;
+            transition: all 1s ease;
+        }
+        .bento-card.active .net-node:nth-child(2) { animation: nodeFloat1 3s infinite alternate; }
+        .bento-card.active .net-node:nth-child(3) { animation: nodeFloat2 4s infinite alternate; }
+        .bento-card.active .net-node:nth-child(4) { animation: nodeFloat3 3.5s infinite alternate; }
+        
+        @keyframes nodeFloat1 { 100% { transform: translate(5px, -10px); } }
+        @keyframes nodeFloat2 { 100% { transform: translate(-8px, -5px); } }
+        @keyframes nodeFloat3 { 100% { transform: translate(10px, 8px); } }
+
+        .net-line { stroke: rgba(255,255,255,0.1); stroke-width: 2; }
+        .net-packet { fill: #22c55e; filter: drop-shadow(0 0 4px #22c55e); opacity: 0; }
+        
+        .bento-card.active .net-packet.pk-1 { animation: packetFly1 2s infinite ease-out 0.2s; }
+        .bento-card.active .net-packet.pk-2 { animation: packetFly2 2.5s infinite ease-out 1s; }
+        .bento-card.active .net-packet.pk-3 { animation: packetFly3 1.8s infinite ease-out 0.7s; }
+
+        @keyframes packetFly1 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(-50px, -45px); opacity: 0; }
+        }
+        @keyframes packetFly2 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(-60px, 45px); opacity: 0; }
+        }
+        @keyframes packetFly3 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(65px, 0px); opacity: 0; }
+        }
+        
+        /* Bento Card Internal Entrance Animations */
+        @keyframes bentoPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            60% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .bento-card.active .bento-anim-graphic > div {
+            animation: bentoPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="fit-test-header" style="position: sticky; top: 0; z-index: 100; background: rgba(9,9,11,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <nav class="navbar" style="max-width: 1400px; margin: 0 auto; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center;">
+            <div class="nav-left" style="display: flex; gap: 24px; align-items: center;">
+                <div style="display: flex; align-items: center; background: rgba(255,255,255,0.05); padding: 4px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-right: 16px;">
+                    <a href="index.html" class="nav-link" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; padding: 6px 12px;">AutoSecOps</a>
+                    <a href="anadolu.html" class="nav-link" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; padding: 6px 12px;">Anadolu-350M</a>
+                    <a href="robocontrol.html" class="nav-link" style="color: #fff; font-weight: 500; background: rgba(255,255,255,0.1); border-radius: 6px; padding: 6px 12px; text-decoration: none; font-size: 14px;">RoboControl</a>
+                </div>
+                <a href="#how-it-works" class="nav-link" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px;">Platform</a>
+                <a href="#outcomes" class="nav-link" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px;">Outcomes</a>
+            </div>
+            
+            <div class="nav-center">
+                <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-weight: 700;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8"/>
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        <circle cx="12" cy="12" r="2" fill="white"/>
+                    </svg>
+                    <span>Singularity</span>
+                </a>
+            </div>
+
+            <div class="nav-right" style="display: flex; gap: 24px; align-items: center;">
+                <a href="fit-test.html" class="nav-link" style="color: #a1a1aa; text-decoration: none; font-weight: 500; transition: color 0.2s;">Fit Test</a>
+                <a href="#" class="nav-link" style="color: #3b82f6; font-weight: 600; text-decoration: none;">RoboControl</a>
+                <a href="/portal" class="btn btn-primary start-demo-nav" style="background: white; color: black; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 600;">Portal</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- Hero Split Section -->
+        <section class="ft-hero-split">
+            <div class="ft-hero-left">
+                <h1 class="ft-title">Your Robots Need an Operating System. This Is It.</h1>
+            </div>
+            <div class="ft-hero-right">
+                <p class="ft-desc">RoboControl is a multi-agent control, safety, and observability platform that turns autonomous machines into observable, controllable, and extensible operational systems. One runtime. Every robot.</p>
+                <div class="ft-actions">
+                    <a href="/buy/cloud" class="btn-ft-primary" style="background-color: #3b82f6; border-color: #3b82f6;">Request Access</a>
+                    <a href="#how-it-works" class="btn-ft-secondary">See How It Works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Large Image -->
+        <div class="ft-image-block robocontrol-hero-img" style="background-image: url('robocontrol.png');">
+            <div class="ft-image-overlay"></div>
+        </div>
+
+        <!-- Val Bar -->
+        <div class="ft-val-bar-wrapper">
+            <div class="ft-val-bar">
+                <div class="ft-val-item">
+                    <span>Rovers · Quadrupeds · Drones</span>
+                    <svg width="18" height="18" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div class="ft-val-item">
+                    <span>Multi-Agent Runtime</span>
+                    <svg width="18" height="18" fill="none" stroke="#ef4444" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="ft-val-item">
+                    <span>Zero-Trust Safety</span>
+                    <svg width="18" height="18" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="ft-val-item">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="background: rgba(59,130,246,0.2); color: #3b82f6; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: 700;">NEW</span>
+                        <span>Learned Behaviors</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-separator"></div>
+
+        <!-- Architecture & Method Section -->
+        <section class="features-section" id="features">
+            <div class="section-header">
+                <h2>Five Things. Done Better Than Anyone.</h2>
+                <p>Execute autonomous missions. Monitor live operations. Enforce safety boundaries. Recover from failures. Continuously improve behavior. One platform handles all five.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <h3>Multi-Agent Runtime Architecture</h3>
+                    <p>Specialized AI agent layers for planning, execution, monitoring, safety validation, recovery, and memory. Not a single opaque decision loop—a structured, resilient, multi-agent system that reasons, validates, and acts.</p>
+                </div>
+                
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Safety as a First-Class Citizen</h3>
+                    <p>Policy checks before every critical action. Execution validated against constraints. Automatic hazard response. Failure escalation paths. Operator override when needed. Reliability and control matter as much as autonomy.</p>
+                </div>
+
+                <div class="f-card">
+                    <div class="f-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-5"/><path d="M9 7V2"/><path d="M15 7V2"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Robots That Get Smarter Every Run</h3>
+                    <p>Mission history, successful strategies, prior context, and operational patterns are retained and reused over time. Every deployment makes the next one better—while remaining fully observable and policy-governed.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Scroll Reveal Text -->
+        <section class="scroll-reveal-section">
+            <div class="scroll-track">
+                <div class="sticky-text-container">
+                    <div class="reveal-text-block" id="revealText">
+                        <p>Every robot operates blind. <strong style="font-weight:600;">No shared memory. No oversight.</strong></p>
+                        <br/>
+                        <p>One failed mission costs thousands in downtime and retrieval.</p>
+                        <br/>
+                        <p>Autonomy without control is a liability. <strong style="font-weight:600;">Not a feature.</strong></p>
+                        <br/>
+                        <p>RoboControl changes everything.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Tabs Section -->
+        <section class="features-tabs-section" id="how-it-works">
+            <div class="features-header-wrapper">
+                <div class="features-header-left">
+                    <div class="badge" style="background-color: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1);">
+                        <span class="dot" style="background-color: #3b82f6; box-shadow: 0 0 8px #3b82f6;"></span>
+                        How it Works
+                    </div>
+                    <h2 class="features-section-title">From Goal to Execution.<br/>Fully Autonomous. Fully Controlled.</h2>
+                </div>
+                <div class="features-header-right">
+                    <p>RoboControl provides a multi-agent runtime with specialized<br/>roles for planning, execution, monitoring, safety, recovery,<br/>and memory—all coordinated under one system.</p>
+                </div>
+            </div>
+        
+            <div class="features-grid">
+                <!-- Left Tabs -->
+                <div class="features-tabs">
+                    <div class="feature-tab active" data-index="0">
+                        <h3 class="tab-title">Natural-Language Mission Planning</h3>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                        <div class="tab-content">
+                            <p>Submit a high-level goal. The agent decomposes it into executable sub-tasks, assigns them to fleet units, and monitors execution across multi-step workflows in dynamic environments.</p>
+                        </div>
+                    </div>
+                    <div class="feature-tab" data-index="1">
+                        <h3 class="tab-title">Real-Time Hazard Response</h3>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                        <div class="tab-content">
+                            <p>Every action is validated against safety constraints before execution. Obstacles trigger automatic stop-and-hold. Operator override is always one command away. No unvalidated movement.</p>
+                        </div>
+                    </div>
+                    <div class="feature-tab" data-index="2">
+                        <h3 class="tab-title">Full-Stack Observability</h3>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                        <div class="tab-content">
+                            <p>Robot state, mission progress, connection health, sensor output, hazard conditions, event history—all streamed in real time. Autonomous operations become transparent, debuggable, and manageable.</p>
+                        </div>
+                    </div>
+                    <div class="feature-tab" data-index="3">
+                        <h3 class="tab-title">Fleet-Wide Learned Behaviors</h3>
+                        <div class="progress-bar"><div class="progress-fill"></div></div>
+                        <div class="tab-content">
+                            <p>Successful routes, constraint patterns, and operational strategies are stored and synced fleet-wide. Every robot benefits from what any single robot learned. Institutional memory for machines.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Mockup Area -->
+                <div class="features-mockup-area">
+                    <!-- Panel 0: Chat & Stats (Planning) -->
+                    <div class="mockup-panel active" id="mp0">
+                        <div class="mac-window">
+                            <div class="mac-header">
+                                <div class="mac-dots"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
+                                <div class="mac-browser-bar">🤖 singularity.robocontrol/orchestrator</div>
+                            </div>
+                            <div class="mac-body" style="min-height: 320px; display: flex;">
+                                <div class="mac-chat" style="flex: 1.2; padding: 20px; border-right: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; gap: 12px;">
+                                    <div class="msg-bot" style="animation: fadeUpIn 0.3s ease forwards;">
+                                        <p style="color: rgba(255,255,255,0.6); font-size: 12px;">Awaiting mission parameters...</p>
+                                    </div>
+                                    <div class="msg-user" style="background: #3b82f6; align-self: flex-end; padding: 10px 14px; border-radius: 12px; font-size: 13px; animation: fadeUpIn 0.3s ease forwards 0.2s; opacity: 0;">
+                                        <p>Patrol Sector 7G and scan for thermal signatures.</p>
+                                    </div>
+                                    <div class="msg-bot" style="background: rgba(255,255,255,0.03); color: white; border: 1px solid rgba(59,130,246,0.3); padding: 12px; border-radius: 8px; font-size: 13px; animation: fadeUpIn 0.3s ease forwards 0.5s; opacity: 0;">
+                                        <p style="color: #60a5fa; margin-bottom: 4px; font-family: monospace;">[DECOMPOSING OBJECTIVE]</p>
+                                        <p>1. Nav: 38.89° N, 77.03° W (Rover-Delta)<br>2. Sensor: Thermal Sweep 360°</p>
+                                    </div>
+                                </div>
+                                <div class="mac-dashboard" style="flex: 1; padding: 20px; background: transparent;">
+                                    <h4 style="font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase;">Fleet Assignment</h4>
+                                    <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 12px;">
+                                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); animation: fadeUpIn 0.3s ease forwards 0.8s; opacity: 0; backdrop-filter: blur(4px);">
+                                            <div style="font-size: 11px; color: #a1a1aa;">Assigned Unit</div>
+                                            <div style="font-size: 18px; font-weight: bold; color: #22c55e; margin-top: 4px;">Rover-Delta</div>
+                                        </div>
+                                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); animation: fadeUpIn 0.3s ease forwards 1s; opacity: 0; backdrop-filter: blur(4px);">
+                                            <div style="font-size: 11px; color: #a1a1aa;">Estimated Duration</div>
+                                            <div style="font-size: 18px; font-weight: bold; color: #fff; margin-top: 4px;">14 Min</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel 1: Timeline & Response (Hazard) -->
+                    <div class="mockup-panel" id="mp1">
+                        <div class="mac-window">
+                            <div class="mac-header">
+                                <div class="mac-dots"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
+                                <div class="mac-browser-bar">🛡️ singularity.robocontrol/safety</div>
+                            </div>
+                            <div class="panel-body panel-response" style="display: flex; min-height: 320px;">
+                                <div class="resp-timeline-side" style="flex: 1.5; padding: 24px; border-right: 1px solid rgba(255,255,255,0.05);">
+                                    <h3 class="panel-title" style="font-size: 15px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                        Live Policy Validation
+                                    </h3>
+                                    <p class="panel-sub" style="font-size: 12px; color: #a1a1aa; margin-bottom: 24px;">Active Intervention · ROVER-DELTA</p>
+                                    
+                                    <div class="resp-timeline" style="display: flex; flex-direction: column; gap: 16px;">
+                                        <div class="tl-item tl-done" style="display: flex; gap: 12px; position: relative;">
+                                            <div class="tl-dot" style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; margin-top: 4px; box-shadow: 0 0 8px rgba(239,68,68,0.5);"></div>
+                                            <div class="tl-content"><span class="tl-time" style="font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.4);">0ms</span><span class="tl-text" style="font-size: 13px;">Obstacle detected on path boundary</span></div>
+                                        </div>
+                                        <div class="tl-item tl-done" style="display: flex; gap: 12px; position: relative;">
+                                            <div class="tl-dot" style="width: 10px; height: 10px; border-radius: 50%; background: #3b82f6; margin-top: 4px;"></div>
+                                            <div class="tl-content"><span class="tl-time" style="font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.4);">14ms</span><span class="tl-text" style="font-size: 13px;">Kinematic constraints evaluated</span></div>
+                                        </div>
+                                        <div class="tl-item tl-done" style="display: flex; gap: 12px; position: relative;">
+                                            <div class="tl-dot" style="width: 10px; height: 10px; border-radius: 50%; background: #3b82f6; margin-top: 4px;"></div>
+                                            <div class="tl-content"><span class="tl-time" style="font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.4);">38ms</span><span class="tl-text" style="font-size: 13px;">Enforcement rule triggered: STOP_AND_HOLD</span></div>
+                                        </div>
+                                        <div class="tl-item tl-active" style="display: flex; gap: 12px; position: relative;">
+                                            <div class="tl-dot" style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; margin-top: 4px; box-shadow: 0 0 8px rgba(245,158,11,0.5);"></div>
+                                            <div class="tl-content"><span class="tl-time" style="font-family: monospace; font-size: 11px; color: rgba(255,255,255,0.4);">42ms</span><span class="tl-text" style="font-size: 13px; color: #fcd34d; font-weight: 500;">Motion halted. Awaiting override.</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resp-status-side" style="flex: 1; padding: 24px;">
+                                    <div class="resp-status-card" style="background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 8px; padding: 20px; text-align: center;">
+                                        <div class="rsc-header" style="font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase;">Fleet Status</div>
+                                        <div class="rsc-val isolated" style="color: #f59e0b; font-size: 24px; font-weight: bold; margin: 8px 0; animation: blinkText 2s infinite;">HALTED</div>
+                                        <div class="rsc-detail" style="font-size: 12px; color: rgba(255,255,255,0.5);">Operator clearance required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel 2: Chart & Progress Bars (Telemetry) -->
+                    <div class="mockup-panel" id="mp2">
+                        <div class="mac-window">
+                            <div class="mac-header">
+                                <div class="mac-dots"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
+                                <div class="mac-browser-bar">📡 singularity.robocontrol/telemetry</div>
+                            </div>
+                            <div class="panel-body panel-prediction" style="display: flex; min-height: 320px;">
+                                <div class="pred-panel-left" style="flex: 1.2; padding: 24px; border-right: 1px solid rgba(255,255,255,0.05);">
+                                    <h3 class="panel-title" style="font-size: 15px; margin-bottom: 24px;">Fleet Diagnostics</h3>
+                                    <div class="ml-models" style="display: flex; flex-direction: column; gap: 16px;">
+                                        <div class="ml-model-row" style="display: flex; align-items: center; gap: 12px;">
+                                            <span class="ml-name" style="width: 100px; font-size: 12px; color: rgba(255,255,255,0.7);">Battery (Avg)</span>
+                                            <div class="ml-bar" style="flex: 1; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;">
+                                                <div class="ml-bar-fill tel-bar" style="width: 0%; height: 100%; background: #22c55e; border-radius: 2px;" data-target="88"></div>
+                                            </div>
+                                            <span class="ml-pct tel-num" style="font-size: 12px; width: 30px; text-align: right;" data-target="88">0%</span>
+                                        </div>
+                                        <div class="ml-model-row" style="display: flex; align-items: center; gap: 12px;">
+                                            <span class="ml-name" style="width: 100px; font-size: 12px; color: rgba(255,255,255,0.7);">Link Quality</span>
+                                            <div class="ml-bar" style="flex: 1; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;">
+                                                <div class="ml-bar-fill tel-bar" style="width: 0%; height: 100%; background: #3b82f6; border-radius: 2px;" data-target="96"></div>
+                                            </div>
+                                            <span class="ml-pct tel-num" style="font-size: 12px; width: 30px; text-align: right;" data-target="96">0%</span>
+                                        </div>
+                                        <div class="ml-model-row" style="display: flex; align-items: center; gap: 12px;">
+                                            <span class="ml-name" style="width: 100px; font-size: 12px; color: rgba(255,255,255,0.7);">LiDAR Conf.</span>
+                                            <div class="ml-bar" style="flex: 1; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;">
+                                                <div class="ml-bar-fill tel-bar" style="width: 0%; height: 100%; background: #a855f7; border-radius: 2px;" data-target="92"></div>
+                                            </div>
+                                            <span class="ml-pct tel-num" style="font-size: 12px; width: 30px; text-align: right;" data-target="92">0%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pred-panel-right" style="flex: 1; padding: 24px; background: transparent;">
+                                    <div class="pred-chart-box" style="background: rgba(255,255,255,0.02); padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); text-align: center; backdrop-filter: blur(4px);">
+                                        <h4 style="font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase;">Connection Latency</h4>
+                                        <div style="font-size: 42px; font-weight: bold; color: #3b82f6; margin: 16px 0;" class="tel-latency">0ms</div>
+                                        <div style="font-size: 12px; color: #22c55e;">● Stable Connection</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Panel 3: Map/Stats (Memory) -->
+                    <div class="mockup-panel" id="mp3">
+                        <div class="mac-window">
+                            <div class="mac-header">
+                                <div class="mac-dots"><span class="red-dot"></span><span class="yellow-dot"></span><span class="green-dot"></span></div>
+                                <div class="mac-browser-bar">🧠 singularity.robocontrol/memory</div>
+                            </div>
+                            <div class="mac-body" style="min-height: 320px; display: flex;">
+                                <div class="mac-dashboard" style="width: 100%; padding: 24px;">
+                                    <div class="dash-top" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 16px; margin-bottom: 20px;">
+                                        <h3>Fleet Knowledge Base</h3>
+                                        <span style="font-size: 12px; background: rgba(34,197,94,0.1); color: #22c55e; padding: 4px 8px; border-radius: 4px;">Synced</span>
+                                    </div>
+                                    <div class="dash-list">
+                                        <div class="list-item" style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); animation: fadeUpIn 0.3s ease forwards 0.2s; opacity: 0;">
+                                            <span style="font-size: 13px; color: #fff;">Sector 7G Thermal Maps</span>
+                                            <span class="tag" style="background: rgba(59,130,246,0.1); color: #60a5fa; font-size: 11px; padding: 4px 8px; border-radius: 4px;">4 Units Synced</span>
+                                        </div>
+                                        <div class="list-item" style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); animation: fadeUpIn 0.3s ease forwards 0.4s; opacity: 0;">
+                                            <span style="font-size: 13px; color: #fff;">Obstacle Boundary Constraints</span>
+                                            <span class="tag" style="background: rgba(59,130,246,0.1); color: #60a5fa; font-size: 11px; padding: 4px 8px; border-radius: 4px;">12 Units Synced</span>
+                                        </div>
+                                        <div class="list-item" style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); animation: fadeUpIn 0.3s ease forwards 0.6s; opacity: 0;">
+                                            <span style="font-size: 13px; color: #fff;">Optimal Patrol Route #B</span>
+                                            <span class="tag" style="background: rgba(59,130,246,0.1); color: #60a5fa; font-size: 11px; padding: 4px 8px; border-radius: 4px;">2 Units Synced</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outcomes / Bento Grid Section -->
+        <section class="outcomes-section" id="roi">
+            <div class="outcomes-header">
+                <div>
+                    <h2 class="outcomes-title">Built for Deployment.<br/>Not for Demos.</h2>
+                </div>
+            </div>
+        
+            <div class="outcomes-grid" id="bento-grid">
+                <div class="outcome-card bento-card active" data-bento="0">
+                    <div class="bento-progress"><div class="bento-progress-fill"></div></div>
+                    <div class="card-graphic bento-anim-graphic">
+                        <div class="anim-cost-savings">
+                            <div class="cost-ring cost-ring-1"></div>
+                            <div class="cost-ring cost-ring-2"></div>
+                            <div class="cost-ring cost-ring-3"></div>
+                            <div class="cost-center">
+                                <div class="cost-amount roi-num">40-60%</div>
+                                <div class="cost-label" style="text-align: center; line-height: 1.4; margin-top: 4px;">Fewer<br>Aborts</div>
+                            </div>
+                            <div class="cost-particle p1"></div>
+                            <div class="cost-particle p2"></div>
+                            <div class="cost-particle p3"></div>
+                            <div class="cost-particle p4"></div>
+                        </div>
+                    </div>
+                    <div class="card-text">
+                        <h4>Recovery Workflows That Actually Work</h4>
+                        <p>Predictive hazard recovery, autonomous rerouting, and failure escalation paths mean missions complete—not abort. Downtime drops. Retrieval costs vanish.</p>
+                    </div>
+                </div>
+        
+                <div class="outcome-card bento-card" data-bento="1">
+                    <div class="bento-progress"><div class="bento-progress-fill"></div></div>
+                    <div class="card-graphic bento-anim-graphic">
+                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative;z-index:2; overflow: hidden;">
+                            <div class="radar-grid-bg"></div>
+                            <div class="radar-sweep"></div>
+                            <div class="radar-ping p-1"></div>
+                            <div class="radar-ping p-2"></div>
+                            <div style="position: absolute; width: 160px; height: 160px; border-radius: 50%; border: 1px dashed rgba(255,255,255,0.1);"></div>
+                            <div style="position: absolute; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.05);"></div>
+                            <div style="position: relative; z-index: 10; animation: pulseShield 2s infinite;">
+                                <svg width="36" height="36" fill="none" stroke="#6366f1" stroke-width="2.5" viewBox="0 0 24 24" style="filter: drop-shadow(0 0 8px rgba(99,102,241,1)); background: rgba(0,0,0,0.5); border-radius: 50%;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-text">
+                        <h4>Safety Policies, Not Safety Theater</h4>
+                        <p>Constraints evaluated before every action. Not after. Not sometimes. Every critical command passes through validation, escalation, and operator-override gates in real time.</p>
+                    </div>
+                </div>
+        
+                <div class="outcome-card bento-card" data-bento="2">
+                    <div class="bento-progress"><div class="bento-progress-fill"></div></div>
+                    <div class="card-graphic bento-anim-graphic">
+                        <div style="width:100%;height:100%;position:relative;z-index:2; overflow: hidden;">
+                            <div class="net-hub"></div>
+                            <!-- Coordinates from center: node 1 is top left, node 2 is bottom left, node 3 is right -->
+                            <div class="net-node" style="top: 25%; left: 25%;"></div>
+                            <div class="net-node" style="top: 75%; left: 20%;"></div>
+                            <div class="net-node" style="top: 50%; right: 20%;"></div>
+                            
+                            <svg style="position: absolute; top:0; left:0; width: 100%; height: 100%; pointer-events: none;">
+                                <!-- Node 1 (TL) -->
+                                <line x1="50%" y1="50%" x2="25%" y2="25%" class="net-line" />
+                                <!-- Node 2 (BL) -->
+                                <line x1="50%" y1="50%" x2="20%" y2="75%" class="net-line" />
+                                <!-- Node 3 (R) -->
+                                <line x1="50%" y1="50%" x2="80%" y2="50%" class="net-line" />
+                                
+                                <!-- Packets moving along lines -->
+                                <!-- Packet 1 (Center to TL) -->
+                                <circle cx="50%" cy="50%" r="3" class="net-packet pk-1" />
+                                <!-- Packet 2 (Center to BL) -->
+                                <circle cx="50%" cy="50%" r="3" class="net-packet pk-2" />
+                                <!-- Packet 3 (Center to R) -->
+                                <circle cx="50%" cy="50%" r="3" class="net-packet pk-3" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-text">
+                        <h4>One Control Plane. Every Machine Type.</h4>
+                        <p>Rovers, quadrupeds, drones, inspection robots, security robots, and future heterogeneous fleets. One extensible adapter model to rule them all. No vendor lock-in.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer API Section -->
+        <section id="api" class="api-section">
+            <div class="section-header">
+                <h2>Ship to Production. Not to a Slide Deck.</h2>
+                <p>Simulation-backed development. Extensible adapter model. Connect any robot's ROS2 streams to the Singularity engine in under 20 lines of code.</p>
+            </div>
+
+            <div class="code-window">
+                <div class="code-window-header">
+                    <div class="mac-btn mac-close"></div>
+                    <div class="mac-btn mac-min"></div>
+                    <div class="mac-btn mac-max"></div>
+                    <span class="code-title">robot_adapter.py</span>
+                </div>
+                <div class="code-content" style="color:#d1d5db; font-family:'Menlo', 'Monaco', 'Courier New', monospace; font-size:14px; line-height:1.6; padding:24px; overflow-x:auto;">
+<span style="color:#c678dd;">import</span> asyncio
+<span style="color:#c678dd;">from</span> singularity_robotics <span style="color:#c678dd;">import</span> RoboControlEdge, PolicyEngine
+
+<span style="color:#c678dd;">async def</span> <span style="color:#61afef;">connect_rover</span>():
+    <span style="color:#5c6370;font-style:italic;"># Initialize the local safety & control adapter</span>
+    adapter = RoboControlEdge(
+        device_id=<span style="color:#98c379;">"ROVER-DELTA-19"</span>,
+        platform=<span style="color:#98c379;">"NVIDIA_JETSON"</span>
+    )
+
+    <span style="color:#5c6370;font-style:italic;"># Bind telemetry streams and hazards</span>
+    <span style="color:#c678dd;">await</span> adapter.bind_video_stream(source=<span style="color:#98c379;">"rtsp://local:8554/cam0"</span>)
+    
+    <span style="color:#5c6370;font-style:italic;"># Enforce absolute safety policy before operation</span>
+    policy = <span style="color:#c678dd;">await</span> PolicyEngine.load_strict_constraints(<span style="color:#98c379;">"zone_b_rules.yaml"</span>)
+    adapter.enforce_policy(policy)
+
+    <span style="color:#5c6370;font-style:italic;"># Sync with fleet command center</span>
+    <span style="color:#c678dd;">await</span> adapter.start_mission_loop()
+
+<span style="color:#c678dd;">if</span> __name__ == <span style="color:#98c379;">"__main__"</span>:
+    asyncio.run(connect_rover())
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8" />
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" />
+                        <circle cx="12" cy="12" r="2" fill="white" />
+                    </svg>
+                    <span>Singularity</span>
+                </div>
+                <p class="footer-tagline">Autonomous security for the age of autonomous attacks. Built by security
+                    researchers.</p>
+                <div class="footer-status">
+                    <span class="dot" style="background-color: #22c55e; box-shadow: 0 0 6px #22c55e;"></span>
+                    All Systems Operational
+                </div>
+                <div class="footer-badges">
+                    <span class="footer-badge-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)"
+                            stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><text x="6" y="16" font-size="7"
+                                fill="rgba(255,255,255,0.4)" font-weight="600">SOC</text>
+                        </svg>
+                    </span>
+                    <span class="footer-badge-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)"
+                            stroke-width="1.5">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                            <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h5>Products</h5>
+                    <a href="index.html">AutoSecOps</a>
+                    <a href="anadolu.html">Anadolu-350M (SLM)</a>
+                    <a href="robocontrol.html">RoboControl</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <a href="#">About us</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Partners</a>
+                    <a href="#">Security</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Resources</h5>
+                    <a href="#">Documentation</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Social</h5>
+                    <a href="https://github.com/singularityrd" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://x.com/singularityrd" target="_blank" rel="noopener">x.com</a>
+                    <a href="https://linkedin.com/company/singularityrd" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://youtube.com/@singularityrd" target="_blank" rel="noopener">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"
+            style="max-width: 1400px; margin: 40px auto 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); font-size: 13px;">
+            &copy; 2026 Singularity Platform. All rights reserved.
+        </div>
+        <div class="footer-watermark">Singularity</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // --- SCROLL REVEAL ---
+            const block = document.getElementById("revealText");
+            if (block) {
+                const paragraphs = block.querySelectorAll("p");
+                paragraphs.forEach(p => {
+                    const words = p.innerText.split(/(\s+)/);
+                    p.innerHTML = '';
+                    words.forEach(word => {
+                        if (word.trim() === '') {
+                            p.appendChild(document.createTextNode(word));
+                        } else {
+                            const span = document.createElement("span");
+                            span.className = "reveal-word";
+                            span.innerText = word;
+                            p.appendChild(span);
+                        }
+                    });
+                });
+
+                const allWords = document.querySelectorAll(".reveal-word");
+                const track = document.querySelector(".scroll-track");
+
+                window.addEventListener("scroll", () => {
+                    const rect = track.getBoundingClientRect();
+                    const trackTop = rect.top;
+                    const trackHeight = rect.height - window.innerHeight;
+                    let scrollProgress = -trackTop / trackHeight;
+                    scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+                    const wordsToReveal = Math.floor(scrollProgress * allWords.length);
+                    allWords.forEach((word, index) => {
+                        word.style.opacity = index <= wordsToReveal ? "1" : "0.2";
+                    });
+                });
+                window.dispatchEvent(new Event("scroll"));
+            }
+
+            // --- TAB AUTO-ADVANCE ---
+            const tabs = document.querySelectorAll('.feature-tab');
+            const TAB_DURATION = 4000;
+            let currentTabIndex = 0;
+            let progressStart = 0;
+            let animationFrameId = null;
+
+            function startTabTimer() {
+                progressStart = Date.now();
+                animateProgress();
+            }
+
+            function animateProgress() {
+                const now = Date.now();
+                const elapsed = now - progressStart;
+                let percent = (elapsed / TAB_DURATION) * 100;
+
+                if (percent >= 100) {
+                    percent = 100;
+                    switchTab((currentTabIndex + 1) % tabs.length);
+                    return;
+                }
+
+                const activeTab = tabs[currentTabIndex];
+                const fill = activeTab.querySelector('.progress-fill');
+                if (fill) fill.style.width = percent + '%';
+
+                animationFrameId = requestAnimationFrame(animateProgress);
+            }
+
+            const mockupPanels = document.querySelectorAll('.mockup-panel');
+
+            function triggerPanelAnimations(panelDiv) {
+                // If the panel relies on CSS animations via classes or HTML resetting
+                // We'll reset all inner elements by cloning to re-trigger CSS animations
+                const macBody = panelDiv.querySelector('.mac-body') || panelDiv.querySelector('.panel-body');
+                if (macBody) {
+                    const clone = macBody.innerHTML;
+                    macBody.innerHTML = '';
+                    void macBody.offsetWidth;
+                    macBody.innerHTML = clone;
+                }
+
+                // Specifically animate Telemetry panel (mp2)
+                if (panelDiv.id === 'mp2') {
+                    // Trigger width transitions
+                    const bars = panelDiv.querySelectorAll('.tel-bar');
+                    setTimeout(() => {
+                        bars.forEach(bar => {
+                            bar.style.transition = 'width 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                            bar.style.width = bar.getAttribute('data-target') + '%';
+                        });
+                    }, 50);
+
+                    // Trigger number counters
+                    const nums = panelDiv.querySelectorAll('.tel-num');
+                    nums.forEach(num => {
+                        const targetStr = num.getAttribute('data-target');
+                        const target = parseInt(targetStr);
+                        let count = 0;
+                        const inv = setInterval(() => {
+                            if(count >= target) {
+                                num.innerText = target + '%';
+                                clearInterval(inv);
+                            } else {
+                                count += 4;
+                                if(count > target) count = target;
+                                num.innerText = count + '%';
+                            }
+                        }, 50);
+                    });
+
+                    // Trigger latency rapid switch
+                    const lat = panelDiv.querySelector('.tel-latency');
+                    if (lat) {
+                        let lCount = 0;
+                        const lInv = setInterval(() => {
+                            if(lCount > 15) {
+                                lat.innerText = '12ms';
+                                clearInterval(lInv);
+                            } else {
+                                lat.innerText = (Math.floor(Math.random() * 20) + 10) + 'ms';
+                                lCount++;
+                            }
+                        }, 80);
+                    }
+                }
+            }
+
+            function switchTab(newIndex) {
+                cancelAnimationFrame(animationFrameId);
+
+                const oldTab = tabs[currentTabIndex];
+                oldTab.classList.remove('active');
+                const oldFill = oldTab.querySelector('.progress-fill');
+                if (oldFill) oldFill.style.width = '0%';
+
+                for (var i = 0; i < mockupPanels.length; i++) {
+                    mockupPanels[i].classList.remove('active');
+                }
+                var target = document.getElementById('mp' + newIndex);
+                if (target) {
+                    target.classList.add('active');
+                    triggerPanelAnimations(target);
+                }
+
+                currentTabIndex = newIndex;
+                const newTab = tabs[currentTabIndex];
+                newTab.classList.add('active');
+
+                startTabTimer();
+            }
+
+            if (tabs.length > 0) {
+                tabs.forEach((tab, index) => {
+                    tab.addEventListener('click', () => {
+                        if (index !== currentTabIndex) {
+                            switchTab(index);
+                        }
+                    });
+                });
+                triggerPanelAnimations(document.getElementById('mp0'));
+                startTabTimer();
+            }
+
+            // --- BENTO CARD AUTO-CYCLE ---
+            const bentoCards = document.querySelectorAll('.bento-card');
+            const BENTO_DURATION = 3500;
+            let currentBentoIndex = 0;
+            let bentoProgressStart = 0;
+            let bentoAnimFrameId = null;
+
+            function resetBentoAnimations(card) {
+                const animContainer = card.querySelector('.bento-anim-graphic');
+                if (animContainer) {
+                    const clone = animContainer.innerHTML;
+                    animContainer.innerHTML = '';
+                    void animContainer.offsetHeight;
+                    animContainer.innerHTML = clone;
+
+                    // Trigger counting animation if this is the ROI card
+                    const numDiv = animContainer.querySelector('.roi-num');
+                    if(numDiv) {
+                        let count = 0;
+                        numDiv.innerText = "0%";
+                        const countInterval = setInterval(() => {
+                            if(count >= 60) {
+                                numDiv.innerText = "40-60%";
+                                clearInterval(countInterval);
+                            } else {
+                                count += Math.floor(Math.random() * 5) + 1;
+                                if(count > 60) count = 60;
+                                numDiv.innerText = count + "%";
+                            }
+                        }, 25);
+                    }
+                }
+            }
+
+            function startBentoTimer() {
+                bentoProgressStart = Date.now();
+                animateBentoProgress();
+            }
+
+            function animateBentoProgress() {
+                const now = Date.now();
+                const elapsed = now - bentoProgressStart;
+                let percent = (elapsed / BENTO_DURATION) * 100;
+
+                if (percent >= 100) {
+                    percent = 100;
+                    switchBento((currentBentoIndex + 1) % bentoCards.length);
+                    return;
+                }
+
+                const activeCard = bentoCards[currentBentoIndex];
+                const fill = activeCard.querySelector('.bento-progress-fill');
+                if (fill) fill.style.width = percent + '%';
+
+                bentoAnimFrameId = requestAnimationFrame(animateBentoProgress);
+            }
+
+            function switchBento(newIndex) {
+                cancelAnimationFrame(bentoAnimFrameId);
+
+                const oldCard = bentoCards[currentBentoIndex];
+                oldCard.classList.remove('active');
+                const oldFill = oldCard.querySelector('.bento-progress-fill');
+                if (oldFill) oldFill.style.width = '0%';
+
+                currentBentoIndex = newIndex;
+                const newCard = bentoCards[currentBentoIndex];
+                newCard.classList.add('active');
+                resetBentoAnimations(newCard);
+
+                startBentoTimer();
+            }
+
+            if (bentoCards.length > 0) {
+                bentoCards.forEach((card, index) => {
+                    card.addEventListener('click', () => {
+                        if (index !== currentBentoIndex) {
+                            switchBento(index);
+                        }
+                    });
+                });
+                resetBentoAnimations(bentoCards[0]);
+                startBentoTimer();
+            }
+        });
+    </script>
+</body>
+</html>
