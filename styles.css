@@ -439,24 +439,31 @@ a {
 
 .logos-track {
     display: flex;
-    gap: 60px;
+    gap: 48px;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    opacity: 0.4;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
 }
 
-.logos-track span {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    cursor: default;
+.logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.45;
+    filter: grayscale(40%);
+    transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.logos-track span:hover {
+.logo-item:hover {
     opacity: 1;
+    filter: grayscale(0%);
     transform: translateY(-2px);
+}
+
+.logo-item svg {
+    display: block;
 }
 
 /* --- SCROLL REVEAL SECTION --- */
