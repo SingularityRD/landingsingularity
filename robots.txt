@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Allow AI Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://singularityrd.com/sitemap.xml
