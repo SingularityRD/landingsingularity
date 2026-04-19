@@ -617,7 +617,7 @@ a {
 .features-mockup-area {
     position: relative;
     width: 100%;
-    background-image: url('2.png');
+    background-image: url('2.webp');
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -1442,12 +1442,12 @@ a {
 }
 
 /* Background images for each bento card */
-.bento-card[data-bento="0"] .bento-anim-graphic { background: url('3.png') center/cover no-repeat !important; }
-.bento-card[data-bento="1"] .bento-anim-graphic { background: url('4.png') center/cover no-repeat !important; }
-.bento-card[data-bento="2"] .bento-anim-graphic { background: url('5.png') center/cover no-repeat !important; }
-.bento-card[data-bento="3"] .bento-anim-graphic { background: url('2.png') center/cover no-repeat !important; }
-.bento-card[data-bento="4"] .bento-anim-graphic { background: url('3.png') center 60%/cover no-repeat !important; }
-.bento-card[data-bento="5"] .bento-anim-graphic { background: url('5.png') center 30%/cover no-repeat !important; }
+.bento-card[data-bento="0"] .bento-anim-graphic { background: url('3.webp') center/cover no-repeat !important; }
+.bento-card[data-bento="1"] .bento-anim-graphic { background: url('4.webp') center/cover no-repeat !important; }
+.bento-card[data-bento="2"] .bento-anim-graphic { background: url('5.webp') center/cover no-repeat !important; }
+.bento-card[data-bento="3"] .bento-anim-graphic { background: url('2.webp') center/cover no-repeat !important; }
+.bento-card[data-bento="4"] .bento-anim-graphic { background: url('3.webp') center 60%/cover no-repeat !important; }
+.bento-card[data-bento="5"] .bento-anim-graphic { background: url('5.webp') center 30%/cover no-repeat !important; }
 
 .bento-anim-graphic::before {
     content: '';
@@ -2122,7 +2122,7 @@ a {
     position: relative;
     max-width: 1400px;
     margin: 0 auto;
-    background-image: url('3.png');
+    background-image: url('3.webp');
     background-size: cover;
     background-position: center 40%;
     border-radius: 20px;
@@ -2214,7 +2214,7 @@ a {
     flex-shrink: 0;
 }
 .agent-avatar { background: #222; display:flex; align-items:center; justify-content:center; border: 1px solid rgba(255,255,255,0.1); }
-.user-avatar { background: url('HEiGBCEWEAAyAx3.jpg') center/cover; }
+.user-avatar { background: url('HEiGBCEWEAAyAx3.webp') center/cover; }
 
 .slack-content { flex: 1; display: flex; flex-direction: column; gap: 4px; }
 .slack-meta { font-size: 15px; display: flex; align-items: baseline; gap: 8px; color: #d1d5db;}
@@ -2642,7 +2642,7 @@ a {
 .mockup-bg {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('HEiGBCEWEAAyAx3.jpg'); /* Mountain Background from repo */
+    background-image: url('HEiGBCEWEAAyAx3.webp'); /* Mountain Background from repo */
     background-size: cover;
     background-position: center;
     border-radius: 24px;
@@ -2775,7 +2775,7 @@ a {
     width: 100%;
     height: 100%;
     background-color: #000;
-    background-image: url('HEiGBCEWEAAyAx3.jpg'); /* placeholder for demo video thumbs */
+    background-image: url('HEiGBCEWEAAyAx3.webp'); /* placeholder for demo video thumbs */
     background-size: cover;
     background-position: center;
     opacity: 0.4;
@@ -3172,7 +3172,7 @@ a {
 .deploy-screen-bg {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('HEiGBCEWEAAyAx3.jpg');
+    background-image: url('HEiGBCEWEAAyAx3.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.15;
@@ -3476,7 +3476,7 @@ a {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-image: url('HEiGBCEWEAAyAx3.jpg');
+    background-image: url('HEiGBCEWEAAyAx3.webp');
     background-size: cover;
     background-position: center;
     color: white;
@@ -3592,7 +3592,7 @@ a {
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 100px;
-    background-image: url('HEiGBCEWEAAyAx3.jpg');
+    background-image: url('HEiGBCEWEAAyAx3.webp');
     background-size: cover;
     background-position: center top;
     opacity: 0.35;
@@ -3889,7 +3889,7 @@ a {
 .enterprise-bg {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('HEiGBCEWEAAyAx3.jpg');
+    background-image: url('HEiGBCEWEAAyAx3.webp');
     background-size: cover;
     background-position: center 40%;
     z-index: 0;
@@ -4096,7 +4096,7 @@ a {
 .faq-bg {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('HEiGBCEWEAAyAx3.jpg');
+    background-image: url('HEiGBCEWEAAyAx3.webp');
     background-size: cover;
     background-position: center 60%;
     z-index: 0;
@@ -4263,7 +4263,7 @@ a {
 /* --- Footer --- */
 .site-footer {
     background-color: #080808;
-    background-image: url('footer.png');
+    background-image: url('footer.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -4500,7 +4500,7 @@ a {
     width: 100%;
     height: 50vh;
     min-height: 400px;
-    background-image: url('HEiGBCEWEAAyAx3.jpg');
+    background-image: url('HEiGBCEWEAAyAx3.webp');
     background-size: cover;
     background-position: center 30%;
     position: relative;
@@ -4630,7 +4630,7 @@ a {
 .test-img-placeholder {
     width: 100%;
     height: 100%;
-    background-image: url('HEiGBCEWEAAyAx3.jpg');
+    background-image: url('HEiGBCEWEAAyAx3.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.6;
