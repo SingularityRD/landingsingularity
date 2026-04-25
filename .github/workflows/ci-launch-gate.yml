@@ -1,0 +1,32 @@
+name: silanding-launch-gate
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  launch-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Syntax checks
+        run: npm run check:syntax
+
+      - name: Cloud Run template validation
+        run: npm run check:cloudrun
+
+      - name: Local route + security smoke
+        run: npm run smoke:local

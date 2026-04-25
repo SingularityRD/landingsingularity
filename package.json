@@ -1,0 +1,23 @@
+{
+  "name": "silanding",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Singularity AutoSecOps marketing site + portal/admin (same-origin)",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check:syntax": "node --check server.mjs && node --check admin/_assets/admin.js && node --check portal/_assets/portal.js",
+    "check:cloudrun": "node scripts/validate-cloudrun-template.mjs",
+    "smoke:local": "node scripts/smoke-local.mjs",
+    "simulate:webhook": "node scripts/simulate-webhook.mjs",
+    "ci": "npm run check:syntax && npm run check:cloudrun && npm run smoke:local"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "firebase-admin": "^12.7.0"
+  }
+}
