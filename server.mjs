@@ -673,9 +673,25 @@ async function serveFile(req, res, fsPath, { cacheControl } = {}) {
     createReadStream(fsPath).pipe(res);
     return;
   } catch {
-    setCommonSecurityHeaders(res);
-    res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-    res.end("Not found.");
+    try {
+      const notFoundPath = path.join(SITE_ROOT, "404.html");
+      const st = await stat(notFoundPath);
+      setCommonSecurityHeaders(res);
+      res.writeHead(404, {
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": st.size,
+        "Cache-Control": "no-store",
+      });
+      if (req.method === "HEAD") {
+        res.end();
+        return;
+      }
+      createReadStream(notFoundPath).pipe(res);
+    } catch {
+      setCommonSecurityHeaders(res);
+      res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+      res.end("Not found.");
+    }
   }
 }
 

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | Singularity</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#000000">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background:
+                radial-gradient(ellipse 70% 90% at 50% -20%, rgba(56, 189, 248, 0.12), transparent 60%),
+                #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.4px;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 48px;
+        }
+
+        .code {
+            font-size: clamp(96px, 22vw, 180px);
+            font-weight: 700;
+            letter-spacing: -6px;
+            line-height: 1;
+            background: linear-gradient(180deg, #fff 30%, rgba(255, 255, 255, 0.25));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        h1 {
+            font-size: clamp(20px, 3.4vw, 28px);
+            font-weight: 600;
+            letter-spacing: -0.6px;
+            margin: 18px 0 10px 0;
+            animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.55);
+            max-width: 420px;
+            animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 32px;
+            animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn:hover { transform: translateY(-2px); }
+
+        .btn-primary { background: #fff; color: #000; }
+
+        .btn-secondary {
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .status {
+            margin-top: 56px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.35);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 8px #22c55e;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .code, h1, p, .actions, .status { animation: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/" class="brand">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8" />
+            <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" />
+            <circle cx="12" cy="12" r="2" fill="white" />
+        </svg>
+        Singularity
+    </a>
+
+    <div class="code">404</div>
+    <h1>This page does not exist.</h1>
+    <p>Or it is air-gapped so thoroughly that even we cannot reach it. Either way, the rest of the site is right
+        here.</p>
+
+    <div class="actions">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href="/blog/" class="btn btn-secondary">Read the Blog</a>
+    </div>
+
+    <div class="status">
+        <span class="dot"></span>
+        All other systems operational
+    </div>
+</body>
+
+</html>
