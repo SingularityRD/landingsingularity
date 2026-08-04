@@ -1,0 +1,44 @@
+# Singularity
+
+> Singularity is an AI-native security operations platform for mission-critical infrastructure. One autonomous agent replaces EDR, XDR, SIEM, SOAR, NDR, ITDR, and MDM — investigating and stopping attacks in under a second, running entirely on the customer's own hardware: on-premises, in sovereign cloud, or fully air-gapped. Nothing the customer protects (logs, credentials, code, incident evidence) ever leaves their infrastructure.
+
+Key facts:
+- Category: AI-native Security Operations Platform (agentic SOC) with offensive validation and AI-agent runtime control
+- Differentiator: the entire platform, including its AI model, runs fully offline inside the customer perimeter — built for defense, sovereign-cloud, critical-infrastructure, industrial/OT, and regulated environments where telemetry cannot leave
+- Security loop: Observe → Reason → Prove → Act → Record → Improve, with human approval gates for high-impact actions, rollback on every action, and evidence-grade audit records
+- Recognition: NVIDIA Inception member; NATO Innovation Range participant; active in Türkiye's defense-industry acceleration ecosystem
+- Research credibility: built by security researchers who have disclosed vulnerabilities in systems affecting over 1 billion people
+- Contact: hello@singularityrd.com
+
+## Products
+
+- [AutoSecOps](https://singularityrd.com/#products): The agentic security operations center. Telemetry, detection, endpoint and device control, identity and cloud coverage, autonomous investigation, and governed response in one air-gap-capable control plane. From $8 per device per month.
+- [BreachOps](https://singularityrd.com/#products): Autonomous offensive-security engine. Continuously attacks authorized systems, separates proven exploit paths from theoretical exposure, and reruns each attack after remediation to verify the fix. Entry: $7,500 validation sprint, expanding to annual continuous validation.
+- [AIDR](https://singularityrd.com/#products): Runtime defense for AI agents. Evaluates every shell command, file operation, package install, browser action, API request, and tool call at the point of execution — allow, escalate for human approval, or deny, with quarantine and rollback. From $8 per AI user per month.
+- [Singularity Maximus](https://singularityrd.com/#maximus): The proprietary cyber-reasoning model powering all three products. Trained on first-party offensive-security research. Scores 91% on Cybench and 0.78 on CyberGym — evaluated fully offline, the same way it deploys. No external API calls, ever.
+
+## Deployment
+
+- Sovereign cloud or on-premises: runs in the customer's tenancy or data center under their jurisdiction
+- Fully air-gapped and classified environments: zero external connectivity; threat intelligence, detection content, and model updates arrive as signed offline bundles
+- Integrates with existing SIEM, SOAR, and identity stacks via REST API and native connectors
+
+## Pricing
+
+- AutoSecOps: from $8 per device per month
+- AIDR: from $8 per AI user per month
+- BreachOps: $7,500 validation sprint, expanding to annual continuous-validation contracts
+- Platform & Government tier: annual sovereign-deployment licences with enterprise support, private infrastructure, and accreditation services
+
+## Blog
+
+- [Why Mission-Critical Infrastructure Needs Air-Gapped AI Security](https://singularityrd.com/blog/air-gapped-ai-security/): why cloud-dependent AI security structurally excludes defense, sovereign, and industrial environments — and what air-gapped cyber reasoning requires
+- [The Agentic SOC: When Security Operations Run Themselves](https://singularityrd.com/blog/agentic-soc/): what changes operationally when the SOC investigates, proves, and acts instead of alerting — and why governance is the hard part
+- [Your AI Agents Have Shell Access. Who Is Watching Them?](https://singularityrd.com/blog/securing-ai-agents/): why IAM, guardrails, EDR, and logs all miss the decisive moment for AI-agent risk — the point of execution
+- [Proof Over Alerts: The Case for Continuous Offensive Validation](https://singularityrd.com/blog/proof-over-alerts/): why exploitability, not severity scores, is the only ground truth — and why the rerun after remediation matters most
+- [Benchmarking Cyber Reasoning: Inside Maximus](https://singularityrd.com/blog/maximus-benchmarks/): what Cybench (91%) and CyberGym (0.78) actually measure, and how an offline model competes with frontier APIs
+
+## Other Products
+
+- [Anadolu-350M](https://singularityrd.com/anadolu.html): Turkish-first, WebGPU-oriented small language model for local edge execution
+- [RoboControl](https://singularityrd.com/robocontrol.html): unified runtime for autonomous robots — mission execution, multi-agent coordination, telemetry, and safety policy enforcement

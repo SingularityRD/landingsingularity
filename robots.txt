@@ -32,3 +32,6 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://singularityrd.com/sitemap.xml
+
+# Machine-readable site summary for AI answer engines
+# https://singularityrd.com/llms.txt

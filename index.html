@@ -62,12 +62,20 @@
             "@type": "ImageObject",
             "url": "https://singularityrd.com/singularity-logo.png"
           },
-          "knowsAbout": ["Autonomous Security Operations", "Air-Gapped AI Security", "Sovereign Cloud Security", "Agentic SOC", "Autonomous Penetration Testing", "AI Agent Runtime Security", "OT Security", "Critical Infrastructure Defense", "Cyber Reasoning Models"],
+          "knowsAbout": ["Autonomous Security Operations", "Air-Gapped AI Security", "Sovereign Cloud Security", "Agentic SOC", "EDR", "XDR", "SIEM", "SOAR", "Autonomous Penetration Testing", "AI Agent Runtime Security", "OT Security", "Critical Infrastructure Defense", "Cyber Reasoning Models"],
           "award": ["NVIDIA Inception Program Member", "NATO Innovation Range Participant"],
+          "email": "hello@singularityrd.com",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "hello@singularityrd.com",
+            "availableLanguage": ["English", "Turkish"]
+          },
           "sameAs": [
             "https://linkedin.com/company/singularityrd",
             "https://x.com/singularityrd",
-            "https://github.com/singularityrd"
+            "https://github.com/singularityrd",
+            "https://youtube.com/@singularityrd"
           ]
         },
         {
@@ -75,6 +83,7 @@
           "@id": "https://singularityrd.com/#website",
           "url": "https://singularityrd.com",
           "name": "Singularity",
+          "inLanguage": "en",
           "publisher": { "@id": "https://singularityrd.com/#organization" }
         },
         {
@@ -131,50 +140,50 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Can Singularity run fully air-gapped, without any external cloud dependency?",
+              "name": "Does it really work with no internet at all?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. The entire platform — including the Maximus cyber-reasoning model — deploys and operates inside your perimeter: on-premises, in sovereign cloud, or in fully air-gapped and classified environments. No telemetry, credentials, source code, or incident evidence ever leaves your infrastructure. Updates ship as signed offline bundles."
+                "text": "Yes. Everything — including the AI — runs on your own hardware. Nothing you protect gets sent anywhere: no logs, no passwords, no code, no incident data. Updates arrive as signed files you load yourself."
               }
             },
             {
               "@type": "Question",
-              "name": "How is Singularity different from CrowdStrike, SentinelOne, or Microsoft Defender?",
+              "name": "How is this different from CrowdStrike or Microsoft?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Cloud EDR and XDR platforms depend on cloud connectivity for their most advanced AI capabilities. Singularity delivers autonomous investigation, offensive validation, and AI-agent runtime control through a proprietary reasoning model that runs fully offline — built for defense, sovereign, industrial, and air-gapped environments where cloud-dependent AI cannot go."
+                "text": "Their smartest features need the cloud. Ours do not. We also do two things they do not do at all: attack your systems to prove what is actually exploitable, and control what your AI agents are allowed to do."
               }
             },
             {
               "@type": "Question",
-              "name": "What is Singularity Maximus?",
+              "name": "What is Maximus?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Maximus is Singularity's proprietary cyber-reasoning model, trained on first-party offensive-security research. It has recorded 91% on Cybench and 0.78 on CyberGym, and it reasons about attack paths, actions, evidence, and remediation — not just alert classification — entirely inside your environment."
+                "text": "The AI behind all three products. We trained it on our own hacking research, so it reasons about how an attack unfolds rather than just labelling alerts. It scores 91% on Cybench and 0.78 on CyberGym — entirely offline."
               }
             },
             {
               "@type": "Question",
-              "name": "Will BreachOps disrupt production or OT systems?",
+              "name": "Will attacking our own systems break something?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No. BreachOps attacks only authorized scopes under strict policy, with safe-by-design techniques for industrial and operational-technology networks. It distinguishes proven exploit paths from theoretical exposure, then reruns the attack after remediation to verify the vulnerability is closed — with minimal operational disruption."
+                "text": "No. It only touches what you authorise, using techniques designed to be safe on production and factory networks. You choose the scope, the limits, and the time window."
               }
             },
             {
               "@type": "Question",
-              "name": "What does AIDR actually govern?",
+              "name": "What exactly does AIDR watch?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "AIDR evaluates every shell command, file operation, package install, browser action, API request, and tool call your AI agents attempt — at the moment of execution. Actions are allowed, escalated for human approval, or denied by policy, with quarantine and rollback built in."
+                "text": "Every command, file change, install, browser action, and API call your AI agents try. Each one is allowed, sent to a human for approval, or blocked — before it runs."
               }
             },
             {
               "@type": "Question",
-              "name": "How does Singularity pricing work?",
+              "name": "What does it cost?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Land with one product and expand. AutoSecOps starts at $8 per device per month, AIDR at $8 per AI user per month, and BreachOps begins with a $7,500 validation sprint that expands into annual continuous-validation contracts. Sovereign and government platform licences are annual and include enterprise support, private infrastructure, and accreditation services."
+                "text": "Start with one product: $8 per device per month for AutoSecOps, $8 per AI user for AIDR, or a one-off $7,500 sprint for BreachOps. Government and defense programmes get annual licences with dedicated support."
               }
             }
           ]
