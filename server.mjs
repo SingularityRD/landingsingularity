@@ -106,6 +106,7 @@ function setCommonSecurityHeaders(res) {
       "font-src 'self' https://fonts.gstatic.com data:",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "script-src 'self' 'unsafe-inline' https://www.gstatic.com https://apis.google.com",
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
       "connect-src 'self' https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://www.googleapis.com",
       "form-action 'self'",
     ].join("; "),

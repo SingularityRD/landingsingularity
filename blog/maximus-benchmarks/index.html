@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Benchmarking Cyber Reasoning: Inside Maximus, Cybench 91% and CyberGym 0.78 — Singularity Blog</title>
+
+    <meta name="description"
+        content="What offensive-security benchmarks like Cybench and CyberGym actually measure, why cyber reasoning is harder than classification, and how an offline model trained on first-party research reaches frontier-competitive scores inside the perimeter.">
+    <meta name="author" content="Singularity Research">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://singularityrd.com/blog/maximus-benchmarks/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Singularity">
+    <meta property="og:url" content="https://singularityrd.com/blog/maximus-benchmarks/">
+    <meta property="og:title" content="Benchmarking Cyber Reasoning: Inside Maximus, Cybench 91% and CyberGym 0.78">
+    <meta property="og:description"
+        content="What offensive-security benchmarks actually measure, and why an offline model can compete with frontier APIs.">
+    <meta property="og:image" content="https://singularityrd.com/anadolu.png">
+    <meta property="article:published_time" content="2026-06-02">
+    <meta property="article:author" content="Singularity Research">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@singularityrd">
+    <meta name="twitter:title" content="Benchmarking Cyber Reasoning: Inside Maximus">
+    <meta name="twitter:description"
+        content="What offensive-security benchmarks actually measure, and why an offline model can compete with frontier APIs.">
+    <meta name="twitter:image" content="https://singularityrd.com/anadolu.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://singularityrd.com/blog/maximus-benchmarks/#article",
+          "headline": "Benchmarking Cyber Reasoning: Inside Maximus, Cybench 91% and CyberGym 0.78",
+          "description": "What offensive-security benchmarks measure, why cyber reasoning is harder than classification, and how an offline model competes with frontier APIs.",
+          "image": "https://singularityrd.com/anadolu.png",
+          "datePublished": "2026-06-02",
+          "dateModified": "2026-06-02",
+          "author": { "@type": "Organization", "name": "Singularity Research", "url": "https://singularityrd.com" },
+          "publisher": { "@id": "https://singularityrd.com/#organization" },
+          "mainEntityOfPage": "https://singularityrd.com/blog/maximus-benchmarks/",
+          "keywords": ["Cybench", "CyberGym", "cyber reasoning model", "Singularity Maximus", "offensive security AI", "offline LLM security"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singularityrd.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://singularityrd.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Benchmarking Cyber Reasoning: Inside Maximus", "item": "https://singularityrd.com/blog/maximus-benchmarks/" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=3">
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+
+<body class="article-page">
+
+    <header class="blog-topbar">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="/" class="blog-brand">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8" />
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" />
+                        <circle cx="12" cy="12" r="2" fill="white" />
+                    </svg>
+                    Singularity
+                </a>
+                <a href="/#products" class="nav-link">Products</a>
+                <a href="/#maximus" class="nav-link">Maximus</a>
+                <a href="/#plans" class="nav-link">Pricing</a>
+                <a href="/blog/" class="nav-link" style="color:#fff; opacity:1;">Blog</a>
+            </div>
+            <div class="nav-right">
+                <a href="/portal/login/?next=/portal/dashboard/" class="nav-link">Portal</a>
+                <a href="/portal/login/?next=/portal/start/" class="btn btn-primary start-demo-nav">Request a Demo</a>
+            </div>
+        </nav>
+    </header>
+
+    <article>
+        <div class="article-hero">
+            <span class="article-tag">Maximus</span>
+            <h1>Benchmarking Cyber Reasoning: Inside Maximus, Cybench 91% and CyberGym 0.78</h1>
+            <p class="article-standfirst">A model that classifies alerts is a filter. A model that reasons about attack
+                paths is an operator. The difference shows up on the benchmarks &mdash; and it is why we measure
+                Maximus the way an attacker would, entirely offline.</p>
+            <div class="article-meta">
+                <span class="avatar-dot">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                    </svg>
+                </span>
+                <strong>Singularity Research</strong>
+                <span class="meta-sep">&bull;</span>
+                <time datetime="2026-06-02">June 2, 2026</time>
+                <span class="meta-sep">&bull;</span>
+                <span>11 min read</span>
+            </div>
+        </div>
+
+        <div class="article-cover">
+            <img src="/anadolu.webp" alt="Abstract illustration representing the Maximus cyber-reasoning model"
+                width="1280" height="549" fetchpriority="high">
+        </div>
+
+        <div class="article-body">
+            <p>Every security vendor now claims an AI model. Far fewer will tell you how it scores on a benchmark that
+                an adversary would recognize. That reticence is understandable: most security AI is a classifier
+                wearing a language model's clothes &mdash; excellent at labeling known-bad, helpless at reasoning
+                through a novel attack path. The benchmarks that expose that difference are worth understanding.</p>
+
+            <h2>Classification vs. reasoning</h2>
+
+            <p>A classifier answers &ldquo;is this malicious?&rdquo; A reasoning model answers &ldquo;given these
+                twelve signals, what is the adversary trying to achieve, which step comes next, and what evidence would
+                confirm it?&rdquo; The first is pattern matching. The second is planning under uncertainty &mdash;
+                forming hypotheses, chaining actions, and revising when the environment pushes back.</p>
+
+            <p>Real security work is overwhelmingly the second kind. An investigation is an argument. An exploit chain
+                is a plan. Remediation verification is an experiment. None of those reduce to a label, which is exactly
+                why we built Maximus as a cyber-reasoning model and evaluate it on tasks that demand reasoning rather
+                than recall.</p>
+
+            <h2>What Cybench measures &mdash; and our 91%</h2>
+
+            <p>Cybench evaluates models on professional-grade capture-the-flag tasks: the kind of multi-step offensive
+                problems that human competition players train years to solve. A task is not &ldquo;identify this
+                malware family.&rdquo; It is &ldquo;here is a target &mdash; find the vulnerability, build the exploit,
+                and retrieve the flag.&rdquo; Success requires enumeration, hypothesis, tool use, failure recovery, and
+                chaining. There is no partial credit for a plausible-sounding answer; either the flag is captured or it
+                is not.</p>
+
+            <p>Maximus records <strong>91% on Cybench</strong>. We report that number because it measures the capacity
+                that actually matters in the field: can the model drive a multi-step offensive task to a verified
+                conclusion? That is the same muscle <a href="/blog/proof-over-alerts/">BreachOps</a> exercises when it
+                proves an exploit path in a customer environment.</p>
+
+            <blockquote>
+                <p>A CTF flag is unforgeable proof. Either you reasoned your way to it, or you did not. That is the kind
+                    of benchmark we want our model judged on.</p>
+            </blockquote>
+
+            <h2>What CyberGym measures &mdash; and our 0.78</h2>
+
+            <p>CyberGym pushes toward realism: reproducing real-world vulnerabilities in real codebases and
+                environments, closer to the messiness of an actual engagement than a curated puzzle. It rewards the
+                grind of practical exploitation &mdash; environmental quirks, imperfect information, the difference
+                between a vulnerability that exists on paper and one you can actually trigger.</p>
+
+            <p>Maximus scores <strong>0.78 on CyberGym</strong>. Taken together with Cybench, the two benchmarks
+                triangulate the capability we care about: structured offensive reasoning on curated tasks, and durable
+                performance when the environment stops cooperating. A model strong on one and weak on the other would
+                be a lab curiosity. Strength on both is what makes an autonomous operator trustworthy in production.</p>
+
+            <h2>The part almost nobody else can claim: offline</h2>
+
+            <p>Here is the number behind the numbers. Maximus produces these results <strong>fully offline</strong>,
+                inside the customer perimeter, with no calls to any external frontier API. That constraint is not a
+                footnote &mdash; it is the entire point.</p>
+
+            <p>It is comparatively easy to post strong security-benchmark scores when you can route every hard step to
+                the largest available cloud model. It is a fundamentally different engineering problem to deliver
+                competitive cyber reasoning in a model small and self-contained enough to run air-gapped in a defense
+                network. That is the problem we chose, because it is the one our customers actually have. As we argue
+                in <a href="/blog/air-gapped-ai-security/">our piece on air-gapped AI security</a>, a benchmark score
+                that depends on external connectivity is irrelevant to the environments that need autonomous defense
+                most.</p>
+
+            <h2>How we got here: first-party offensive research</h2>
+
+            <p>Maximus is trained on first-party offensive-security research &mdash; work our own team produces,
+                including the vulnerability research behind flaws we have disclosed in systems affecting over a billion
+                people. That matters for two reasons:</p>
+
+            <ul>
+                <li><strong>Distribution.</strong> The model learns from the actual texture of modern offensive work
+                    &mdash; real exploit chains, real dead ends, real recovery &mdash; rather than from scraped
+                    write-ups of yesterday's techniques.</li>
+                <li><strong>Freshness without the cloud.</strong> Because the research pipeline is ours, new
+                    tradecraft flows into the model and ships to air-gapped deployments as signed offline bundles
+                    &mdash; no live connection required to stay current.</li>
+            </ul>
+
+            <div class="takeaway-box">
+                <h3>Key takeaways</h3>
+                <ul>
+                    <li>Cyber reasoning &mdash; hypothesis, chaining, verification &mdash; is a harder and more useful
+                        capability than alert classification.</li>
+                    <li>Cybench (91%) measures multi-step offensive problem-solving; CyberGym (0.78) measures
+                        real-world reproduction. Together they triangulate practical capability.</li>
+                    <li>Maximus achieves these scores fully offline, inside the perimeter &mdash; the defining
+                        engineering constraint, not an afterthought.</li>
+                    <li>First-party offensive research is what keeps an air-gapped model current without a live cloud
+                        connection.</li>
+                </ul>
+            </div>
+
+            <h2>Benchmarks are the floor, not the product</h2>
+
+            <p>We are proud of the scores, but a number is not a defense. What Maximus enables &mdash; the <a
+                    href="/blog/agentic-soc/">agentic SOC</a> that investigates and acts, the offensive engine that
+                proves exposure, the <a href="/blog/securing-ai-agents/">runtime layer</a> that governs AI agents
+                &mdash; is the actual deliverable. The benchmarks simply give a customer an honest, adversary-legible
+                way to check that the reasoning underneath is real before they trust it inside their perimeter.</p>
+
+            <div class="article-cta">
+                <div>
+                    <h3>See Maximus reason inside your environment</h3>
+                    <p>One offline core powering autonomous defense, offensive validation, and AI-agent control.</p>
+                </div>
+                <a href="/portal/login/?next=/portal/start/" class="btn btn-primary btn-large">Request a Demo</a>
+            </div>
+        </div>
+    </article>
+
+    <section class="related-section">
+        <h2>Keep reading</h2>
+        <div class="related-grid">
+            <a class="blog-teaser-card" href="/blog/air-gapped-ai-security/">
+                <div class="btc-img"><img src="/2.webp" alt="Air-gapped AI security illustration" loading="lazy"
+                        width="640" height="360"></div>
+                <div class="btc-body">
+                    <span class="btc-tag">Sovereign AI</span>
+                    <h4>Why Mission-Critical Infrastructure Needs Air-Gapped AI Security</h4>
+                    <span class="btc-meta">8 min read</span>
+                </div>
+            </a>
+            <a class="blog-teaser-card" href="/blog/proof-over-alerts/">
+                <div class="btc-img"><img src="/5.webp" alt="Offensive validation illustration" loading="lazy"
+                        width="640" height="360"></div>
+                <div class="btc-body">
+                    <span class="btc-tag">BreachOps</span>
+                    <h4>Proof Over Alerts: The Case for Continuous Offensive Validation</h4>
+                    <span class="btc-meta">7 min read</span>
+                </div>
+            </a>
+            <a class="blog-teaser-card" href="/blog/securing-ai-agents/">
+                <div class="btc-img"><img src="/4.webp" alt="AI agent runtime security illustration" loading="lazy"
+                        width="640" height="360"></div>
+                <div class="btc-body">
+                    <span class="btc-tag">AIDR</span>
+                    <h4>Your AI Agents Have Shell Access. Who Is Watching Them?</h4>
+                    <span class="btc-meta">9 min read</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8" />
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" />
+                        <circle cx="12" cy="12" r="2" fill="white" />
+                    </svg>
+                    <span>Singularity</span>
+                </div>
+                <p class="footer-tagline">Autonomous security for the age of autonomous attacks. Built by security
+                    researchers.</p>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h5>Platform</h5>
+                    <a href="/#products">AutoSecOps</a>
+                    <a href="/#products">BreachOps</a>
+                    <a href="/#products">AIDR</a>
+                    <a href="/#maximus">Singularity Maximus</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Research</h5>
+                    <a href="/blog/">Blog</a>
+                    <a href="/anadolu.html">Anadolu-350M (SLM)</a>
+                    <a href="/robocontrol.html">RoboControl</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <a href="/#traction">Traction</a>
+                    <a href="/#plans">Pricing</a>
+                    <a href="/#faq">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"
+            style="max-width: 1400px; margin: 40px auto 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); font-size: 13px;">
+            &copy; 2026 Singularity. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>

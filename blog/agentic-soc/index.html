@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The Agentic SOC: When Security Operations Run Themselves — Singularity Blog</title>
+
+    <meta name="description"
+        content="An agentic SOC investigates, proves, and acts instead of just alerting. Here is what changes operationally when autonomous security operations replace the triage queue — and why governance is the hard part.">
+    <meta name="author" content="Singularity Research">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://singularityrd.com/blog/agentic-soc/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Singularity">
+    <meta property="og:url" content="https://singularityrd.com/blog/agentic-soc/">
+    <meta property="og:title" content="The Agentic SOC: When Security Operations Run Themselves">
+    <meta property="og:description"
+        content="What actually changes when the SOC investigates, proves, and acts — instead of just alerting.">
+    <meta property="og:image" content="https://singularityrd.com/3.png">
+    <meta property="article:published_time" content="2026-07-14">
+    <meta property="article:author" content="Singularity Research">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@singularityrd">
+    <meta name="twitter:title" content="The Agentic SOC: When Security Operations Run Themselves">
+    <meta name="twitter:description"
+        content="What actually changes when the SOC investigates, proves, and acts — instead of just alerting.">
+    <meta name="twitter:image" content="https://singularityrd.com/3.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://singularityrd.com/blog/agentic-soc/#article",
+          "headline": "The Agentic SOC: When Security Operations Run Themselves",
+          "description": "An agentic SOC investigates, proves, and acts instead of just alerting. What changes operationally — and why governance is the hard part.",
+          "image": "https://singularityrd.com/3.png",
+          "datePublished": "2026-07-14",
+          "dateModified": "2026-07-14",
+          "author": { "@type": "Organization", "name": "Singularity Research", "url": "https://singularityrd.com" },
+          "publisher": { "@id": "https://singularityrd.com/#organization" },
+          "mainEntityOfPage": "https://singularityrd.com/blog/agentic-soc/",
+          "keywords": ["agentic SOC", "autonomous security operations", "SOC automation", "autonomous investigation", "governed response"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singularityrd.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://singularityrd.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "The Agentic SOC: When Security Operations Run Themselves", "item": "https://singularityrd.com/blog/agentic-soc/" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=3">
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+
+<body class="article-page">
+
+    <header class="blog-topbar">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="/" class="blog-brand">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8" />
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" />
+                        <circle cx="12" cy="12" r="2" fill="white" />
+                    </svg>
+                    Singularity
+                </a>
+                <a href="/#products" class="nav-link">Products</a>
+                <a href="/#maximus" class="nav-link">Maximus</a>
+                <a href="/#plans" class="nav-link">Pricing</a>
+                <a href="/blog/" class="nav-link" style="color:#fff; opacity:1;">Blog</a>
+            </div>
+            <div class="nav-right">
+                <a href="/portal/login/?next=/portal/dashboard/" class="nav-link">Portal</a>
+                <a href="/portal/login/?next=/portal/start/" class="btn btn-primary start-demo-nav">Request a Demo</a>
+            </div>
+        </nav>
+    </header>
+
+    <article>
+        <div class="article-hero">
+            <span class="article-tag">AutoSecOps</span>
+            <h1>The Agentic SOC: When Security Operations Run Themselves</h1>
+            <p class="article-standfirst">Every SOC tool ever sold has promised to make analysts faster. The agentic
+                SOC makes a different promise: it does the work. That distinction sounds subtle. Operationally, it
+                changes everything &mdash; including what can go wrong.</p>
+            <div class="article-meta">
+                <span class="avatar-dot">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                    </svg>
+                </span>
+                <strong>Singularity Research</strong>
+                <span class="meta-sep">&bull;</span>
+                <time datetime="2026-07-14">July 14, 2026</time>
+                <span class="meta-sep">&bull;</span>
+                <span>10 min read</span>
+            </div>
+        </div>
+
+        <div class="article-cover">
+            <img src="/3.webp" alt="Stylized mountain landscape representing an autonomous operations center"
+                width="1280" height="549" fetchpriority="high">
+        </div>
+
+        <div class="article-body">
+            <p>The modern SOC was designed around a scarce resource: analyst attention. SIEMs aggregate, dashboards
+                summarize, SOAR platforms stitch together predefined responses &mdash; all to ration the minutes of the
+                humans in the loop. Eleven thousand alerts a day, ninety percent noise, and a queue that never sleeps.
+                The architecture concedes defeat before the first alert fires.</p>
+
+            <p>An agentic SOC inverts the design. Instead of routing work <em>to</em> people, it routes
+                <em>decisions</em> to people &mdash; after the work is already done.</p>
+
+            <h2>Advisory tools vs. operators</h2>
+
+            <p>The distinction that matters is not &ldquo;AI-powered&rdquo; versus &ldquo;rule-based.&rdquo; It is
+                <strong>advisory versus operative</strong>. An advisory tool enriches an alert and waits. An operator
+                owns an outcome:</p>
+
+            <ul>
+                <li>It notices the anomalous authentication, pulls the process tree, checks the identity's recent
+                    behavior, and maps the possible attack path.</li>
+                <li>It forms a hypothesis &mdash; <em>credential abuse leading to lateral movement</em> &mdash; and
+                    ranks it against alternatives by evidence, not severity score.</li>
+                <li>It tests the hypothesis where possible, contains what needs containing, and opens an approval
+                    request for anything high-impact.</li>
+                <li>It writes down everything: what it saw, what it concluded, what it did, and how it verified the
+                    result.</li>
+            </ul>
+
+            <p>In our platform this loop &mdash; observe, reason, prove, act, record, improve &mdash; is executed by
+                AutoSecOps and powered by <a href="/blog/maximus-benchmarks/">Maximus</a>, a cyber-reasoning model
+                trained on first-party offensive research. The point of a reasoning model, rather than a classifier, is
+                that investigations are arguments, not lookups: each conclusion must survive contact with the
+                evidence.</p>
+
+            <h2>The governance problem nobody markets</h2>
+
+            <p>Here is the uncomfortable truth about autonomy: an unsupervised actor with admin rights is
+                indistinguishable from an insider threat. The hard engineering in an agentic SOC is not the
+                intelligence &mdash; it is the <strong>governance layer</strong> that makes the intelligence safe to
+                deploy:</p>
+
+            <ul>
+                <li><strong>Policy boundaries.</strong> Which actions may execute autonomously, on which assets, in
+                    which conditions. Isolating a workstation is not the same as isolating a production PLC.</li>
+                <li><strong>Approval gates.</strong> High-impact actions &mdash; patching a domain controller, revoking
+                    a fleet's credentials &mdash; wait for a named human, with the full evidence file attached.</li>
+                <li><strong>Reversibility.</strong> Every change ships with its undo. Containment without rollback is
+                    just a different outage.</li>
+                <li><strong>Evidence-grade records.</strong> Not logs &mdash; records: what was detected, which
+                    evidence supported the conclusion, who approved, what changed, and whether the fix verified. The
+                    kind of trail that survives an audit or a court.</li>
+            </ul>
+
+            <blockquote>
+                <p>Autonomy you cannot govern is a liability. Autonomy you can govern, audit, and reverse is a force
+                    multiplier.</p>
+            </blockquote>
+
+            <h2>What changes for the team</h2>
+
+            <p>The practical effect on a security organization is not headcount reduction &mdash; it is role
+                elevation. Analysts stop being human routers and become supervisors of an operator that never sleeps:</p>
+
+            <ul>
+                <li><strong>Tier-1 triage disappears.</strong> The 87% of alerts that are noise die quietly, with the
+                    reasoning recorded. Nobody's night shift is spent closing false positives.</li>
+                <li><strong>Investigations arrive pre-assembled.</strong> The human's first look at an incident is the
+                    full story &mdash; entities, timeline, attack path, blast radius &mdash; not a raw alert.</li>
+                <li><strong>Decisions get better context.</strong> Approval requests carry proof, including &mdash;
+                    when <a href="/blog/proof-over-alerts/">BreachOps</a> has validated the path &mdash; evidence that
+                    the exposure is genuinely exploitable.</li>
+                <li><strong>The SOC becomes interrogable.</strong> &ldquo;What happened with the finance server last
+                    night, and what did we do about it?&rdquo; becomes a question you ask in plain language &mdash; and
+                    the answer comes with receipts.</li>
+            </ul>
+
+            <div class="takeaway-box">
+                <h3>Key takeaways</h3>
+                <ul>
+                    <li>The agentic SOC is operative, not advisory: it owns outcomes, not enrichment.</li>
+                    <li>The hard part is governance &mdash; policy boundaries, approval gates, reversibility, and
+                        evidence-grade records.</li>
+                    <li>Analysts shift from triaging noise to supervising outcomes; scaling comes from software, not
+                        proportional hiring.</li>
+                    <li>In sovereign and air-gapped environments, the entire loop must run inside the perimeter.</li>
+                </ul>
+            </div>
+
+            <h2>Autonomy that respects the perimeter</h2>
+
+            <p>One more constraint separates a demo from a deployable system. In the environments where autonomous
+                operations matter most &mdash; defense networks, sovereign clouds, industrial systems &mdash; the loop
+                must execute entirely on infrastructure the customer controls. A SOC agent that phones an external API
+                mid-investigation has already failed the assignment, a problem we explore in <a
+                    href="/blog/air-gapped-ai-security/">Why Mission-Critical Infrastructure Needs Air-Gapped AI
+                    Security</a>.</p>
+
+            <p>That is the bar for the agentic SOC: machine-speed operations, human-grade judgment at the moments that
+                matter, and a paper trail that would satisfy your auditor and your general counsel on the same day.</p>
+
+            <div class="article-cta">
+                <div>
+                    <h3>Watch AutoSecOps run an investigation</h3>
+                    <p>From first signal to verified fix &mdash; autonomous, governed, and fully inside your
+                        perimeter.</p>
+                </div>
+                <a href="/portal/login/?next=/portal/start/" class="btn btn-primary btn-large">Request a Demo</a>
+            </div>
+        </div>
+    </article>
+
+    <section class="related-section">
+        <h2>Keep reading</h2>
+        <div class="related-grid">
+            <a class="blog-teaser-card" href="/blog/air-gapped-ai-security/">
+                <div class="btc-img"><img src="/2.webp" alt="Air-gapped AI security illustration" loading="lazy"
+                        width="640" height="360"></div>
+                <div class="btc-body">
+                    <span class="btc-tag">Sovereign AI</span>
+                    <h4>Why Mission-Critical Infrastructure Needs Air-Gapped AI Security</h4>
+                    <span class="btc-meta">8 min read</span>
+                </div>
+            </a>
+            <a class="blog-teaser-card" href="/blog/securing-ai-agents/">
+                <div class="btc-img"><img src="/4.webp" alt="AI agent runtime security illustration" loading="lazy"
+                        width="640" height="360"></div>
+                <div class="btc-body">
+                    <span class="btc-tag">AIDR</span>
+                    <h4>Your AI Agents Have Shell Access. Who Is Watching Them?</h4>
+                    <span class="btc-meta">9 min read</span>
+                </div>
+            </a>
+            <a class="blog-teaser-card" href="/blog/proof-over-alerts/">
+                <div class="btc-img"><img src="/5.webp" alt="Offensive validation illustration" loading="lazy"
+                        width="640" height="360"></div>
+                <div class="btc-body">
+                    <span class="btc-tag">BreachOps</span>
+                    <h4>Proof Over Alerts: The Case for Continuous Offensive Validation</h4>
+                    <span class="btc-meta">7 min read</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8" />
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" />
+                        <circle cx="12" cy="12" r="2" fill="white" />
+                    </svg>
+                    <span>Singularity</span>
+                </div>
+                <p class="footer-tagline">Autonomous security for the age of autonomous attacks. Built by security
+                    researchers.</p>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h5>Platform</h5>
+                    <a href="/#products">AutoSecOps</a>
+                    <a href="/#products">BreachOps</a>
+                    <a href="/#products">AIDR</a>
+                    <a href="/#maximus">Singularity Maximus</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Research</h5>
+                    <a href="/blog/">Blog</a>
+                    <a href="/anadolu.html">Anadolu-350M (SLM)</a>
+                    <a href="/robocontrol.html">RoboControl</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <a href="/#traction">Traction</a>
+                    <a href="/#plans">Pricing</a>
+                    <a href="/#faq">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"
+            style="max-width: 1400px; margin: 40px auto 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); font-size: 13px;">
+            &copy; 2026 Singularity. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>

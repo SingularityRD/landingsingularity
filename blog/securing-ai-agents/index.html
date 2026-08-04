@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Your AI Agents Have Shell Access. Who Is Watching Them? — Singularity Blog</title>
+
+    <meta name="description"
+        content="Enterprises are deploying AI agents with shells, credentials, and production access. Runtime defense means evaluating every action at the point of execution — allow, escalate, or deny, with quarantine and rollback. Here is how AIDR does it.">
+    <meta name="author" content="Singularity Research">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="theme-color" content="#000000">
+    <link rel="canonical" href="https://singularityrd.com/blog/securing-ai-agents/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Singularity">
+    <meta property="og:url" content="https://singularityrd.com/blog/securing-ai-agents/">
+    <meta property="og:title" content="Your AI Agents Have Shell Access. Who Is Watching Them?">
+    <meta property="og:description"
+        content="Runtime defense for AI agents: govern shell, file, API, and tool-call activity at the moment of execution.">
+    <meta property="og:image" content="https://singularityrd.com/4.png">
+    <meta property="article:published_time" content="2026-06-30">
+    <meta property="article:author" content="Singularity Research">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@singularityrd">
+    <meta name="twitter:title" content="Your AI Agents Have Shell Access. Who Is Watching Them?">
+    <meta name="twitter:description"
+        content="Runtime defense for AI agents: govern shell, file, API, and tool-call activity at the moment of execution.">
+    <meta name="twitter:image" content="https://singularityrd.com/4.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://singularityrd.com/blog/securing-ai-agents/#article",
+          "headline": "Your AI Agents Have Shell Access. Who Is Watching Them?",
+          "description": "Enterprises are deploying AI agents with shells, credentials, and production access. Runtime defense evaluates every action at the point of execution.",
+          "image": "https://singularityrd.com/4.png",
+          "datePublished": "2026-06-30",
+          "dateModified": "2026-06-30",
+          "author": { "@type": "Organization", "name": "Singularity Research", "url": "https://singularityrd.com" },
+          "publisher": { "@id": "https://singularityrd.com/#organization" },
+          "mainEntityOfPage": "https://singularityrd.com/blog/securing-ai-agents/",
+          "keywords": ["AI agent security", "AI runtime defense", "agent governance", "tool call security", "AIDR", "AI agent risk"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://singularityrd.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://singularityrd.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Your AI Agents Have Shell Access. Who Is Watching Them?", "item": "https://singularityrd.com/blog/securing-ai-agents/" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=3">
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+
+<body class="article-page">
+
+    <header class="blog-topbar">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="/" class="blog-brand">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8" />
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" />
+                        <circle cx="12" cy="12" r="2" fill="white" />
+                    </svg>
+                    Singularity
+                </a>
+                <a href="/#products" class="nav-link">Products</a>
+                <a href="/#maximus" class="nav-link">Maximus</a>
+                <a href="/#plans" class="nav-link">Pricing</a>
+                <a href="/blog/" class="nav-link" style="color:#fff; opacity:1;">Blog</a>
+            </div>
+            <div class="nav-right">
+                <a href="/portal/login/?next=/portal/dashboard/" class="nav-link">Portal</a>
+                <a href="/portal/login/?next=/portal/start/" class="btn btn-primary start-demo-nav">Request a Demo</a>
+            </div>
+        </nav>
+    </header>
+
+    <article>
+        <div class="article-hero">
+            <span class="article-tag">AIDR</span>
+            <h1>Your AI Agents Have Shell Access. Who Is Watching Them?</h1>
+            <p class="article-standfirst">Somewhere in your company right now, an AI agent is running a command no
+                human reviewed. It has credentials, a browser, and a to-do list. This is a new category of actor on
+                your network &mdash; and your security stack was not built to govern it.</p>
+            <div class="article-meta">
+                <span class="avatar-dot">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                    </svg>
+                </span>
+                <strong>Singularity Research</strong>
+                <span class="meta-sep">&bull;</span>
+                <time datetime="2026-06-30">June 30, 2026</time>
+                <span class="meta-sep">&bull;</span>
+                <span>9 min read</span>
+            </div>
+        </div>
+
+        <div class="article-cover">
+            <img src="/4.webp" alt="Stylized landscape representing autonomous software agents at work" width="1280"
+                height="549" fetchpriority="high">
+        </div>
+
+        <div class="article-body">
+            <p>The productivity case for AI agents won. Engineering teams use them to write and ship code. Operations
+                teams let them reconcile data, file tickets, and manage infrastructure. Finance teams point them at
+                ERPs. Each agent arrives with the same job description: <em>act on the company's behalf, at machine
+                    speed, with the permissions of the humans who deployed it</em>.</p>
+
+            <p>Read that sentence again as a security engineer, and the problem is obvious. We have spent twenty years
+                building identity controls around one assumption &mdash; that the entity holding the credential has
+                human judgment, human speed, and human accountability. Agents break all three.</p>
+
+            <h2>Why existing controls miss</h2>
+
+            <p>Every legacy control operates either <em>before</em> the agent runs or <em>after</em> it has acted:</p>
+
+            <ul>
+                <li><strong>IAM and least privilege</strong> decide what an agent <em>could</em> do &mdash; but an
+                    agent with legitimate deploy rights can still deploy the wrong thing, delete the wrong bucket, or
+                    exfiltrate the data it legitimately reads.</li>
+                <li><strong>Prompt-level guardrails</strong> filter what the model says, not what its tools do. A
+                    perfectly polite agent can still run <code>rm -rf</code> on the wrong host after a confused
+                    plan.</li>
+                <li><strong>EDR and DLP</strong> see the effects &mdash; a process, a transfer &mdash; without the
+                    intent. They cannot distinguish an agent doing its job from an agent being hijacked through prompt
+                    injection to do an attacker's job.</li>
+                <li><strong>Audit logs</strong> tell you what happened yesterday. With an actor that executes hundreds
+                    of actions per minute, yesterday is far too late.</li>
+            </ul>
+
+            <blockquote>
+                <p>The only place agent risk can actually be governed is the moment between decision and execution.</p>
+            </blockquote>
+
+            <h2>Runtime defense: the action is the perimeter</h2>
+
+            <p>This is the design principle behind AIDR, our runtime defense layer for AI agents. Every action an
+                agent attempts &mdash; every shell command, file operation, package install, browser step, API request,
+                and tool call &mdash; is evaluated <strong>at the point of execution</strong>, in context, before it
+                runs. Three outcomes are possible:</p>
+
+            <ul>
+                <li><strong>Allow.</strong> The action fits policy and the agent's task context. It executes with a
+                    full record.</li>
+                <li><strong>Escalate.</strong> The action is high-impact or unusual &mdash; production credentials, a
+                    mass deletion, an unfamiliar external endpoint. A human approves or rejects, with the agent's plan
+                    and evidence attached.</li>
+                <li><strong>Deny.</strong> The action violates policy or matches an attack pattern &mdash; say, a
+                    prompt-injected instruction to post credentials to an external URL. It never executes. The agent
+                    can be quarantined, and anything it already changed can be rolled back.</li>
+            </ul>
+
+            <p>Context is what makes this more than a firewall for tool calls. The same command &mdash;
+                <code>curl</code> to an external host &mdash; is routine for a research agent and alarming for a
+                payroll agent. Judging that difference requires reasoning about the task, the history, and the blast
+                radius, which is why AIDR runs on <a href="/blog/maximus-benchmarks/">Maximus</a>, the same
+                cyber-reasoning model that powers our SOC, rather than on a static rule list.</p>
+
+            <h2>The threat is not hypothetical</h2>
+
+            <p>Prompt injection has matured from party trick to tradecraft. An agent that reads external content
+                &mdash; web pages, emails, tickets, documents &mdash; can be steered by anyone who controls that
+                content. The instruction does not need to compromise the model; it needs to convince the agent that
+                exfiltrating a file is step three of its task. Combined with legitimate credentials, a hijacked agent
+                is the perfect insider: fast, tireless, authorized, and naive.</p>
+
+            <p>Agent sprawl makes it worse. Companies that cannot enumerate their service accounts are now spawning
+                fleets of ephemeral agents through platforms their security team has never reviewed. Governing the
+                <em>actions</em> &mdash; rather than trying to inventory the actors &mdash; is the only control point
+                that scales with that reality.</p>
+
+            <div class="takeaway-box">
+                <h3>Key takeaways</h3>
+                <ul>
+                    <li>AI agents are a new actor class: machine-speed, credentialed, and susceptible to hijacking via
+                        the content they read.</li>
+                    <li>IAM, guardrails, EDR, and logs all miss the decisive moment &mdash; the point of execution.</li>
+                    <li>Runtime defense evaluates every action in context: allow, escalate, or deny, with quarantine
+                        and rollback.</li>
+                    <li>Judging context requires cyber reasoning, not static rules &mdash; and it must work inside
+                        sovereign perimeters.</li>
+                </ul>
+            </div>
+
+            <h2>Governance your auditor can read</h2>
+
+            <p>Because AIDR sits at the execution boundary, it produces something legacy tooling never could: a
+                complete, evidence-grade record of everything your AI workforce did &mdash; what was attempted, what
+                was allowed, what was escalated, who approved it, and what was rolled back. When the first serious
+                agent-caused incident hits your industry, that record is the difference between an explanation and an
+                admission.</p>
+
+            <p>And like everything we build, it runs where your constraints live: cloud, on-premises, or fully
+                air-gapped &mdash; because the enterprises deploying agents fastest include exactly the <a
+                    href="/blog/air-gapped-ai-security/">sovereign and regulated environments</a> that can least afford
+                to stream their agents' activity to someone else's cloud.</p>
+
+            <div class="article-cta">
+                <div>
+                    <h3>Put a governor on your AI workforce</h3>
+                    <p>AIDR starts at $8 per AI user per month &mdash; runtime policy, approvals, quarantine, and
+                        rollback included.</p>
+                </div>
+                <a href="/portal/login/?next=/portal/start/" class="btn btn-primary btn-large">Request a Demo</a>
+            </div>
+        </div>
+    </article>
+
+    <section class="related-section">
+        <h2>Keep reading</h2>
+        <div class="related-grid">
+            <a class="blog-teaser-card" href="/blog/agentic-soc/">
+                <div class="btc-img"><img src="/3.webp" alt="Agentic SOC illustration" loading="lazy" width="640"
+                        height="360"></div>
+                <div class="btc-body">
+                    <span class="btc-tag">AutoSecOps</span>
+                    <h4>The Agentic SOC: When Security Operations Run Themselves</h4>
+                    <span class="btc-meta">10 min read</span>
+                </div>
+            </a>
+            <a class="blog-teaser-card" href="/blog/air-gapped-ai-security/">
+                <div class="btc-img"><img src="/2.webp" alt="Air-gapped AI security illustration" loading="lazy"
+                        width="640" height="360"></div>
+                <div class="btc-body">
+                    <span class="btc-tag">Sovereign AI</span>
+                    <h4>Why Mission-Critical Infrastructure Needs Air-Gapped AI Security</h4>
+                    <span class="btc-meta">8 min read</span>
+                </div>
+            </a>
+            <a class="blog-teaser-card" href="/blog/maximus-benchmarks/">
+                <div class="btc-img"><img src="/anadolu.webp" alt="Maximus model illustration" loading="lazy"
+                        width="640" height="360"></div>
+                <div class="btc-body">
+                    <span class="btc-tag">Maximus</span>
+                    <h4>Benchmarking Cyber Reasoning: Inside Maximus</h4>
+                    <span class="btc-meta">11 min read</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" opacity="0.8" />
+                        <circle cx="12" cy="12" r="6" stroke="white" stroke-width="1.5" fill="none" opacity="0.6" />
+                        <circle cx="12" cy="12" r="2" fill="white" />
+                    </svg>
+                    <span>Singularity</span>
+                </div>
+                <p class="footer-tagline">Autonomous security for the age of autonomous attacks. Built by security
+                    researchers.</p>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h5>Platform</h5>
+                    <a href="/#products">AutoSecOps</a>
+                    <a href="/#products">BreachOps</a>
+                    <a href="/#products">AIDR</a>
+                    <a href="/#maximus">Singularity Maximus</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Research</h5>
+                    <a href="/blog/">Blog</a>
+                    <a href="/anadolu.html">Anadolu-350M (SLM)</a>
+                    <a href="/robocontrol.html">RoboControl</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <a href="/#traction">Traction</a>
+                    <a href="/#plans">Pricing</a>
+                    <a href="/#faq">FAQ</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"
+            style="max-width: 1400px; margin: 40px auto 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); font-size: 13px;">
+            &copy; 2026 Singularity. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>
