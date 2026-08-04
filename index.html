@@ -187,7 +187,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=8">
 
     <!-- Performance: preload hero imagery -->
     <link rel="preload" as="image" href="HEiGBCEWEAAyAx3.webp" type="image/webp" fetchpriority="high">
@@ -2448,49 +2448,49 @@
             <div class="faq-right">
                 <div class="faq-item open">
                     <button class="faq-question">Does it really work with no internet at all?</button>
-                    <div class="faq-answer">
+                    <div class="faq-answer"><div class="faq-answer-inner">
                         <p>Yes. Everything &mdash; including the AI &mdash; runs on your own hardware. Nothing you
                             protect gets sent anywhere: no logs, no passwords, no code, no incident data. Updates
                             arrive as signed files you load yourself.</p>
-                    </div>
+                    </div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">How is this different from CrowdStrike or Microsoft?</button>
-                    <div class="faq-answer">
+                    <div class="faq-answer"><div class="faq-answer-inner">
                         <p>Their smartest features need the cloud. Ours do not. We also do two things they do not do
                             at all: attack your systems to prove what is actually exploitable, and control what your
                             AI agents are allowed to do.</p>
-                    </div>
+                    </div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">What is Maximus?</button>
-                    <div class="faq-answer">
+                    <div class="faq-answer"><div class="faq-answer-inner">
                         <p>The AI behind all three products. We trained it on our own hacking research, so it reasons
                             about how an attack unfolds rather than just labelling alerts. It scores 91% on Cybench and
                             0.78 on CyberGym &mdash; entirely offline.</p>
-                    </div>
+                    </div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Will attacking our own systems break something?</button>
-                    <div class="faq-answer">
+                    <div class="faq-answer"><div class="faq-answer-inner">
                         <p>No. It only touches what you authorise, using techniques designed to be safe on production
                             and factory networks. You choose the scope, the limits, and the time window.</p>
-                    </div>
+                    </div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">What exactly does AIDR watch?</button>
-                    <div class="faq-answer">
+                    <div class="faq-answer"><div class="faq-answer-inner">
                         <p>Every command, file change, install, browser action, and API call your AI agents try. Each
                             one is allowed, sent to a human for approval, or blocked &mdash; before it runs.</p>
-                    </div>
+                    </div></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">What does it cost?</button>
-                    <div class="faq-answer">
+                    <div class="faq-answer"><div class="faq-answer-inner">
                         <p>Start with one product: $8 per device per month for AutoSecOps, $8 per AI user for AIDR, or
                             a one-off $7,500 sprint for BreachOps. Government and defense programmes get annual
                             licences with dedicated support.</p>
-                    </div>
+                    </div></div>
                 </div>
             </div>
         </div>
@@ -2818,6 +2818,12 @@
 
             // --- FAQ ACCORDION ---
             const faqItems = document.querySelectorAll('.faq-item');
+            function syncFaqAria() {
+                faqItems.forEach(i => {
+                    const b = i.querySelector('.faq-question');
+                    if (b) b.setAttribute('aria-expanded', i.classList.contains('open') ? 'true' : 'false');
+                });
+            }
             faqItems.forEach(item => {
                 const btn = item.querySelector('.faq-question');
                 btn.addEventListener('click', () => {
@@ -2826,8 +2832,10 @@
                     faqItems.forEach(i => i.classList.remove('open'));
                     // Toggle clicked
                     if (!wasOpen) item.classList.add('open');
+                    syncFaqAria();
                 });
             });
+            syncFaqAria();
 
             // --- BENTO CARD AUTO-CYCLE ---
             const bentoCards = document.querySelectorAll('.bento-card');
