@@ -8271,3 +8271,236 @@ body.nav-open {
         display: none;
     }
 }
+
+/* ============================================================
+   Plain-English explainer (V2)
+   ============================================================ */
+
+.explainer-section {
+    background-color: #000;
+    padding: clamp(72px, 9vw, 120px) 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.explainer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.explainer-lead {
+    font-size: clamp(22px, 3.2vw, 34px);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.8px;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto clamp(48px, 6vw, 72px) auto;
+}
+
+.explainer-lead strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.explainer-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.explainer-step {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ex-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    background: rgba(56, 189, 248, 0.08);
+    color: #38bdf8;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.explainer-step h3 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: #fff;
+}
+
+.explainer-step p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.explainer-kicker {
+    margin: clamp(48px, 6vw, 72px) auto 0 auto;
+    max-width: 780px;
+    text-align: center;
+    font-size: clamp(15px, 2vw, 17px);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    padding-top: 36px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 900px) {
+    .explainer-steps {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+}
+
+/* ============================================================
+   Hero stack line + "What it replaces" category grid
+   ============================================================ */
+
+.hero-stack-line {
+    font-size: clamp(11px, 1.3vw, 13px) !important;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 2;
+}
+
+.hero-stack-line span {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.replaces-section {
+    background-color: #050505;
+    padding: clamp(72px, 9vw, 120px) 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.replaces-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.replaces-header {
+    max-width: 720px;
+    margin-bottom: clamp(40px, 5vw, 64px);
+}
+
+.replaces-header h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 600;
+    letter-spacing: -1.4px;
+    line-height: 1.12;
+    color: #fff;
+    margin: 18px 0 16px 0;
+}
+
+.replaces-header p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.55);
+    max-width: 560px;
+}
+
+.replaces-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.replaces-card {
+    background: #050505;
+    padding: 28px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: background 0.3s ease;
+}
+
+.replaces-card:hover {
+    background: #0c0c0f;
+}
+
+.rc-acronym {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.rc-expand {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    color: #a855f7;
+    margin-bottom: 8px;
+}
+
+.replaces-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.replaces-foot {
+    margin-top: clamp(36px, 4vw, 52px);
+    font-size: clamp(16px, 2.2vw, 20px);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 760px;
+}
+
+.replaces-foot strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+    .replaces-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 620px) {
+    .replaces-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stack-line {
+        letter-spacing: 0.8px;
+        line-height: 1.9;
+    }
+}
+
+/* --- Hero stack line needs more room than the old strapline --- */
+.hero-strapline:has(.hero-stack-line) {
+    max-width: 560px;
+}
+
+@media (max-width: 768px) {
+    .hero-strapline:has(.hero-stack-line) {
+        max-width: 100%;
+        text-align: center;
+    }
+}
