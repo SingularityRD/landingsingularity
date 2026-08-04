@@ -8505,23 +8505,14 @@ body.nav-open {
     }
 }
 
-/* --- Hero stack line: centered under the hero --- */
+/* --- Hero stack line: bottom-left, needs more room than the old strapline --- */
 .hero-strapline:has(.hero-stack-line) {
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: min(92vw, 720px);
-    width: max-content;
-    text-align: center;
+    max-width: 560px;
 }
 
 @media (max-width: 768px) {
     .hero-strapline:has(.hero-stack-line) {
-        position: static;
-        transform: none;
-        width: 100%;
         max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
         text-align: center;
     }
 }
